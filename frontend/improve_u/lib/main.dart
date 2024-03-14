@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,19 +45,17 @@ class MyApp extends StatelessWidget {
           surfaceVariant: Color(0xFF4B5563),
           onSurfaceVariant: Color(0xFF374151),
         ),
-        textTheme: TextTheme(
-          headline1: const TextStyle(fontSize: 34.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline2: const TextStyle(fontSize: 28.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline3: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline4: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline5: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline6: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'), // Ajout de headline6
-          button: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          bodyText1: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
-          bodyText2: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
-          bodyLarge: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          bodySmall: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          caption: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
+        textTheme: const TextTheme(
+          headline1: TextStyle(fontSize: 34.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline2: TextStyle(fontSize: 28.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline3: TextStyle(fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline4: TextStyle(fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline5: TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline6: TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'), // Ajout de headline6
+          button: TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          bodyText1: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+          bodyText2: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+          caption: TextStyle(fontSize: 12.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
         ),
         useMaterial3: true,
       ),
@@ -92,19 +90,17 @@ class MyApp extends StatelessWidget {
           surfaceVariant: Color(0xFF4B5563), // Variant de couleur de surface dans le mode sombre
           onSurfaceVariant: Color(0xFFFFFFFF), // Couleur de texte sur la variant de surface
         ),
-        textTheme: TextTheme(
-          headline1: const TextStyle(fontSize: 34.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline2: const TextStyle(fontSize: 28.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline3: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline4: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline5: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          headline6: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          button: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          bodyText1: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
-          bodyText2: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
-          bodyLarge: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          bodySmall: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          caption: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
+        textTheme: const TextTheme(
+          headline1: TextStyle(fontSize: 34.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline2: TextStyle(fontSize: 28.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline3: TextStyle(fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline4: TextStyle(fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline5: TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline6: TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'), // Ajout de headline6
+          button: TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          bodyText1: TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+          bodyText2: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+          caption: TextStyle(fontSize: 12.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
         ),
         useMaterial3: true,
       ),
@@ -114,7 +110,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
