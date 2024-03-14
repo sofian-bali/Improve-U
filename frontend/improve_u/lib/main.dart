@@ -7,13 +7,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Improve-U',
       themeMode: ThemeMode.system,
-       theme: ThemeData(
+      theme: ThemeData(
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
           primary: Color(0xFF8AA8E5),
@@ -50,13 +51,13 @@ class MyApp extends StatelessWidget {
           headline3: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           headline4: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           headline5: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline6: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'), // Ajout de headline6
           button: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          bodyLarge: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           bodyText1: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
-          bodySmall: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           bodyText2: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+          bodyLarge: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          bodySmall: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           caption: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
-          headline6: const TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
         ),
         useMaterial3: true,
       ),
@@ -97,13 +98,13 @@ class MyApp extends StatelessWidget {
           headline3: const TextStyle(fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           headline4: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           headline5: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          headline6: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           button: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-          bodyLarge: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           bodyText1: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
-          bodySmall: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           bodyText2: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+          bodyLarge: const TextStyle(fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+          bodySmall: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
           caption: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
-          headline6: const TextStyle(fontSize: 13.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
         ),
         useMaterial3: true,
       ),
@@ -113,8 +114,10 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
   final String title;
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -132,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(widget.title),
       ),
       body: Center(
@@ -144,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.headline5,
             ),
           ],
         ),
