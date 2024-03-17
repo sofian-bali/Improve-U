@@ -1,0 +1,195 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Aliment {
+  Aliment_id                      Int                    @id @default(autoincrement())
+  Repas_id                        Int
+  Aliment_Type                    String                 @db.VarChar(20)
+  Repas_Aliment_Repas_idToRepas   Repas                  @relation("Aliment_Repas_idToRepas", fields: [Repas_id], references: [Repas_id], onUpdate: Restrict, map: "repas_idfk_1")
+  Aliments_indesirable            Aliments_indesirable[]
+  Repas_Repas_Aliment_idToAliment Repas[]                @relation("Repas_Aliment_idToAliment")
+
+  @@index([Repas_id], map: "repas_idfk_1")
+}
+
+model Alimentation {
+  Alimentation_id                                               Int           @id @default(autoincrement())
+  Utilisateur_id                                                Int
+  Maintien_Calorique                                            Int
+  Objectif_Calorique                                            Int
+  Objectif_Proteines                                            Int
+  Objectif_Glucides                                             Int
+  Objectif_Lipides                                              Int
+  Utilisateur_Alimentation_Utilisateur_idToUtilisateur          Utilisateur   @relation("Alimentation_Utilisateur_idToUtilisateur", fields: [Utilisateur_id], references: [Utilisateur_id], onUpdate: Restrict, map: "utilisateur_idfk_1")
+  Repas                                                         Repas[]
+  Utilisateur_Utilisateur_Objectif_Alimentaire_idToAlimentation Utilisateur[] @relation("Utilisateur_Objectif_Alimentaire_idToAlimentation")
+
+  @@index([Utilisateur_id], map: "utilisateur_idfk_1")
+}
+
+model Aliments_indesirable {
+  Aliments_indesirable_id Int     @id @default(autoincrement())
+  Aliment_id              Int
+  Aliment                 Aliment @relation(fields: [Aliment_id], references: [Aliment_id], onUpdate: Restrict, map: "aliment_idfk_1")
+
+  @@index([Aliment_id], map: "aliment_idfk_1")
+}
+
+model Exercices {
+  Exercice_id                             Int                @id @default(autoincrement())
+  Exercice_nom                            String             @db.VarChar(100)
+  Exercice_type                           String             @db.VarChar(100)
+  Temps_repos                             Int
+  Repetitions_Serie1                      Int
+  Repetitions_Serie2                      Int
+  Repetitions_Serie3                      Int
+  Repetitions_Serie4                      Int
+  Exercice_Description                    String             @db.Text
+  Historique_Sport                        Historique_Sport[]
+  Seances_Seances_Exercice1_idToExercices Seances[]          @relation("Seances_Exercice1_idToExercices")
+  Seances_Seances_Exercice2_idToExercices Seances[]          @relation("Seances_Exercice2_idToExercices")
+  Seances_Seances_Exercice3_idToExercices Seances[]          @relation("Seances_Exercice3_idToExercices")
+  Seances_Seances_Exercice4_idToExercices Seances[]          @relation("Seances_Exercice4_idToExercices")
+}
+
+model Historique_Sante {
+  Historique_Sante_id Int            @id @default(autoincrement())
+  Objectif_Sante_id   Int
+  Poids               Int
+  Date                DateTime       @db.Date
+  Nombre_pas          Int
+  Sommeil             Int
+  Eau                 Int
+  Objectif_Sante      Objectif_Sante @relation(fields: [Objectif_Sante_id], references: [Objectif_Sante_id], onUpdate: Restrict, map: "historiquesante_ibfk_1")
+
+  @@index([Objectif_Sante_id], map: "historiquesante_ibfk_1")
+}
+
+model Historique_Sport {
+  Historique_id  Int         @id @default(autoincrement())
+  Utilisateur_id Int
+  Exercice_id    Int
+  Date           DateTime    @db.Date
+  Poids_Serie1   Int
+  Poids_Serie2   Int
+  Poids_Serie3   Int
+  Poids_serie4   Int
+  Repetitions    Int
+  Note           String      @db.Text
+  Serie          Int
+  Utilisateur    Utilisateur @relation(fields: [Utilisateur_id], references: [Utilisateur_id], onUpdate: Restrict, map: "historiquefk1")
+  Exercices      Exercices   @relation(fields: [Exercice_id], references: [Exercice_id], onUpdate: Restrict, map: "historiquefk2")
+
+  @@index([Utilisateur_id], map: "historiquefk1")
+  @@index([Exercice_id], map: "historiquefk2")
+}
+
+model Objectif_Sante {
+  Objectif_Sante_id   Int                @id @default(autoincrement())
+  Objectif_Nombre_pas Int
+  Objectif_Poids      Int
+  Objectif_Sommeil    Int
+  Objectif_Eau        Int
+  Historique_Sante    Historique_Sante[]
+  Sante               Sante[]
+}
+
+model Repas {
+  Repas_id                          Int          @id @default(autoincrement())
+  Alimentation_id                   Int
+  Aliment_id                        Int
+  Quantite                          Int
+  Glucides                          Int
+  Calories                          Int
+  Lipides                           Int
+  Proteines                         Int
+  Description                       String       @db.Text
+  Duree                             DateTime     @db.Time(0)
+  Image                             String       @db.VarChar(255)
+  Difficulte                        String       @db.VarChar(10)
+  Saison                            String       @db.VarChar(10)
+  Aliment_Aliment_Repas_idToRepas   Aliment[]    @relation("Aliment_Repas_idToRepas")
+  Aliment_Repas_Aliment_idToAliment Aliment      @relation("Repas_Aliment_idToAliment", fields: [Aliment_id], references: [Aliment_id], onUpdate: Restrict, map: "repas_ibfk_1")
+  Alimentation                      Alimentation @relation(fields: [Alimentation_id], references: [Alimentation_id], onUpdate: Restrict, map: "repas_ibfk_2")
+
+  @@index([Aliment_id], map: "repas_ibfk_1")
+  @@index([Alimentation_id], map: "repas_ibfk_2")
+}
+
+model Sante {
+  Sante_id          Int            @id @default(autoincrement())
+  Objectif_Sante_id Int
+  Objectif_Sante    Objectif_Sante @relation(fields: [Objectif_Sante_id], references: [Objectif_Sante_id], onUpdate: Restrict, map: "sante_ibfk_1")
+  Utilisateur       Utilisateur[]
+
+  @@index([Objectif_Sante_id], map: "sante_ibfk_1")
+}
+
+model Seances {
+  Seance_id                                 Int       @id @default(autoincrement())
+  Exercice1_id                              Int
+  Exercice2_id                              Int
+  Exercice3_id                              Int
+  Exercice4_id                              Int
+  Nombre_Points_Seance                      Int
+  Commentaire                               String    @db.Text
+  Nom_Seances                               String    @db.VarChar(100)
+  Exercices_Seances_Exercice1_idToExercices Exercices @relation("Seances_Exercice1_idToExercices", fields: [Exercice1_id], references: [Exercice_id], onUpdate: Restrict, map: "seances_exercicesfk_1")
+  Exercices_Seances_Exercice2_idToExercices Exercices @relation("Seances_Exercice2_idToExercices", fields: [Exercice2_id], references: [Exercice_id], onUpdate: Restrict, map: "seances_exercicesfk_2")
+  Exercices_Seances_Exercice3_idToExercices Exercices @relation("Seances_Exercice3_idToExercices", fields: [Exercice3_id], references: [Exercice_id], onUpdate: Restrict, map: "seances_exercicesfk_3")
+  Exercices_Seances_Exercice4_idToExercices Exercices @relation("Seances_Exercice4_idToExercices", fields: [Exercice4_id], references: [Exercice_id], onUpdate: Restrict, map: "seances_exercicesfk_4")
+  Sport                                     Sport[]
+
+  @@index([Exercice1_id], map: "seances_exercicesfk_1")
+  @@index([Exercice2_id], map: "seances_exercicesfk_2")
+  @@index([Exercice3_id], map: "seances_exercicesfk_3")
+  @@index([Exercice4_id], map: "seances_exercicesfk_4")
+}
+
+model Sport {
+  Sport_id                                         Int           @id @default(autoincrement())
+  Niveau_Sport                                     String        @db.Char(10)
+  Objectif_Sport                                   Int
+  Seance_id                                        Int
+  Utilisateur_id                                   Int
+  Seances                                          Seances       @relation(fields: [Seance_id], references: [Seance_id], onUpdate: Restrict, map: "seances_idfk_1")
+  Utilisateur_Sport_Utilisateur_idToUtilisateur    Utilisateur   @relation("Sport_Utilisateur_idToUtilisateur", fields: [Utilisateur_id], references: [Utilisateur_id], onUpdate: Restrict, map: "seances_idfk_2")
+  Utilisateur_Utilisateur_Objectif_Sport_idToSport Utilisateur[] @relation("Utilisateur_Objectif_Sport_idToSport")
+
+  @@index([Seance_id], map: "seances_idfk_1")
+  @@index([Utilisateur_id], map: "seances_idfk_2")
+}
+
+model Utilisateur {
+  Utilisateur_id                                                 Int                @id @default(autoincrement())
+  Prenom                                                         String             @db.VarChar(100)
+  Nom                                                            String             @db.VarChar(100)
+  Email                                                          String             @db.VarChar(255)
+  Mot_Passe                                                      String             @db.VarChar(255)
+  Date_Naissance                                                 DateTime           @db.Date
+  Date_Creation_Inscription                                      DateTime           @db.Date
+  Sexe                                                           String             @db.VarChar(5)
+  Poids                                                          Int
+  Taille                                                         Int
+  Niveau_Sport                                                   String             @db.Char(10)
+  Regime_Alimentaire                                             String             @db.VarChar(20)
+  Objectif_Sante_id                                              Int
+  Objectif_Sport_id                                              Int
+  Objectif_Alimentaire_id                                        Int
+  Alimentation_Alimentation_Utilisateur_idToUtilisateur          Alimentation[]     @relation("Alimentation_Utilisateur_idToUtilisateur")
+  Historique_Sport                                               Historique_Sport[]
+  Sport_Sport_Utilisateur_idToUtilisateur                        Sport[]            @relation("Sport_Utilisateur_idToUtilisateur")
+  Sante                                                          Sante              @relation(fields: [Objectif_Sante_id], references: [Sante_id], onUpdate: Restrict, map: "objectif_idfk_1")
+  Sport_Utilisateur_Objectif_Sport_idToSport                     Sport              @relation("Utilisateur_Objectif_Sport_idToSport", fields: [Objectif_Sport_id], references: [Sport_id], onUpdate: Restrict, map: "objectif_idfk_2")
+  Alimentation_Utilisateur_Objectif_Alimentaire_idToAlimentation Alimentation       @relation("Utilisateur_Objectif_Alimentaire_idToAlimentation", fields: [Objectif_Alimentaire_id], references: [Alimentation_id], onUpdate: Restrict, map: "objectif_idfk_3")
+
+  @@index([Objectif_Sante_id], map: "objectif_idfk_1")
+  @@index([Objectif_Sport_id], map: "objectif_idfk_2")
+  @@index([Objectif_Alimentaire_id], map: "objectif_idfk_3")
+}
