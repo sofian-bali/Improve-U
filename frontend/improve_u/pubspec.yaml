@@ -1,6 +1,6 @@
 name: improve_u
 
-description: "Improve-U est une application tout-en-un qui simplifie la vie des amateurs de sport et de santé. Suivez vos habitudes sportives, alimentaires et de santé tout en bénéficiant de conseils personnalisés et d'une approche écoresponsable. Avec une interface conviviale, Improve-U vous aide à atteindre vos objectifs de manière motivante et pratique."
+description: "Improve- est une application tout-en-un qui simplifie la vie des amateurs de sport et de santé. Suivez vos habitudes sportives, alimentaires et de santé tout en bénéficiant de conseils personnalisés et d'une approche écoresponsable. Avec une interface conviviale, Improve-U vous aide à atteindre vos objectifs de manière motivante et pratique."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -28,15 +28,15 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+
 dependencies:
   flutter:
     sdk: flutter
 
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
 
+    
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
