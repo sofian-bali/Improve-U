@@ -1,17 +1,30 @@
 import express from 'express';
 
-const port = 3000;
+// Création du serveur
 const app = express();
+const port = 8080;
 
-app.get("/home", (req,res)=>{
-    
-    res.send("Server is ready");
-    
-
+// Affichage de la page Home
+app.get("/", (req,res)=>{
+    res.status(200).json({"message": "Server is ready"});
 });
 
-app.listen(port, () => {
-    console.log(`Serve at http://localhost:${port}`);
+// Routes training
+import training from './routes/training.routes.js';
+app.use('/training', training);
 
-    }  
-);
+
+// Routes nutrition
+import nutrition from './routes/nutrition.routes.js';
+app.use('/nutrition', nutrition);
+
+
+// Routes health
+import health from './routes/health.routes.js';
+app.use('/health', health);
+
+
+// Démarage du serveur
+app.listen(port, () => {
+    console.log(`Le serveur est en ligne à l'url: http://localhost:${port} !`);
+});

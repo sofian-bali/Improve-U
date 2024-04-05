@@ -1,0 +1,187 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model im_exercise {
+  id_exercise          Int                   @id @default(autoincrement())
+  exercise_name        String                @db.VarChar(100)
+  exercise_type        String                @db.VarChar(50)
+  exercise_rest_time   Int
+  exercise_reps        Int
+  exercise_series      Int
+  exercise_description String                @db.Text
+  id_workout           Int
+  im_workout           im_workout            @relation(fields: [id_workout], references: [id_workout], onUpdate: Restrict, map: "im_exercise_ibfk_1")
+  im_exercise_history  im_exercise_history[]
+
+  @@index([id_workout], map: "id_workout")
+}
+
+model im_exercise_history {
+  id_exercise_history   Int         @id @default(autoincrement())
+  exercise_history_date DateTime    @db.Date
+  id_exercise           Int
+  im_exercise           im_exercise @relation(fields: [id_exercise], references: [id_exercise], onUpdate: Restrict, map: "im_exercise_history_ibfk_1")
+
+  @@index([id_exercise], map: "id_exercise")
+}
+
+model im_food {
+  id_food             Int                   @id @default(autoincrement())
+  food_name           String                @db.VarChar(255)
+  food_type           String                @db.VarChar(100)
+  food_calories       Int
+  food_carbs          Int
+  food_prots          Int
+  food_fats           Int
+  im_recipe           im_recipe[]
+  im_undesirable_food im_undesirable_food[]
+}
+
+model im_health {
+  id_health      Int              @id @default(autoincrement())
+  id_user        Int
+  im_user        im_user          @relation(fields: [id_user], references: [id_user], onUpdate: Restrict, map: "im_health_ibfk_1")
+  im_health_goal im_health_goal[]
+
+  @@index([id_user], map: "id_user")
+}
+
+model im_health_goal {
+  id_health_goal       Int                    @id @default(autoincrement())
+  health_goal_steps    Int
+  health_goal_weight   Int
+  health_goal_sleep    Int
+  health_goal_water    Int
+  id_health            Int
+  im_health            im_health              @relation(fields: [id_health], references: [id_health], onUpdate: Restrict, map: "im_health_goal_ibfk_1")
+  im_health_goal_daily im_health_goal_daily[]
+
+  @@index([id_health], map: "id_health")
+}
+
+model im_health_goal_daily {
+  id_health_goal_daily         Int                            @id @default(autoincrement())
+  health_goal_daily_date       DateTime                       @db.Date
+  health_goal_daily_steps      Int
+  health_goal_daily_weight     Int
+  health_goal_daily_sleep      Int
+  health_goal_daily_water      Int
+  id_health_goal               Int
+  im_health_goal               im_health_goal                 @relation(fields: [id_health_goal], references: [id_health_goal], onUpdate: Restrict, map: "im_health_goal_daily_ibfk_1")
+  im_health_goal_daily_history im_health_goal_daily_history[]
+
+  @@index([id_health_goal], map: "id_health_goal")
+}
+
+model im_health_goal_daily_history {
+  id_health_goal_daily_history   Int                  @id @default(autoincrement())
+  health_goal_daily_history_date DateTime             @db.Date
+  id_health_goal_daily           Int
+  im_health_goal_daily           im_health_goal_daily @relation(fields: [id_health_goal_daily], references: [id_health_goal_daily], onUpdate: Restrict, map: "im_health_goal_daily_history_ibfk_1")
+
+  @@index([id_health_goal_daily], map: "id_health_goal_daily")
+}
+
+model im_meal {
+  id_meal          Int          @id @default(autoincrement())
+  meal_name        String       @db.VarChar(255)
+  meal_quantity    Int
+  meal_calories    Int
+  meal_carbs       Int
+  meal_prots       Int
+  meal_fats        Int
+  meal_description String       @db.Text
+  meal_length      Int
+  meal_image       String       @db.VarChar(255)
+  meal_difficulty  Int
+  meal_season      Int
+  id_nutrition     Int
+  im_nutrition     im_nutrition @relation(fields: [id_nutrition], references: [id_nutrition], onUpdate: Restrict, map: "im_meal_ibfk_1")
+  im_recipe        im_recipe[]
+
+  @@index([id_nutrition], map: "id_nutrition")
+}
+
+model im_nutrition {
+  id_nutrition            Int       @id @default(autoincrement())
+  nutrition_goal          Int
+  nutrition_goal_calories Int
+  nutrition_goal_carbs    Int
+  nutrition_goal_prots    Int
+  nutrition_goal_fats     Int
+  id_user                 Int
+  im_meal                 im_meal[]
+  im_user                 im_user   @relation(fields: [id_user], references: [id_user], onUpdate: Restrict, map: "im_nutrition_ibfk_1")
+
+  @@index([id_user], map: "id_user")
+}
+
+model im_recipe {
+  id_recipe Int     @id @default(autoincrement())
+  id_meal   Int
+  id_food   Int
+  im_meal   im_meal @relation(fields: [id_meal], references: [id_meal], onUpdate: Restrict, map: "im_recipe_ibfk_1")
+  im_food   im_food @relation(fields: [id_food], references: [id_food], onUpdate: Restrict, map: "im_recipe_ibfk_2")
+
+  @@index([id_food], map: "id_food")
+  @@index([id_meal, id_food], map: "id_meal")
+}
+
+model im_training {
+  id_training   Int          @id @default(autoincrement())
+  training_goal Int
+  id_user       Int
+  im_user       im_user      @relation(fields: [id_user], references: [id_user], onUpdate: Restrict, map: "im_training_ibfk_1")
+  im_workout    im_workout[]
+
+  @@index([id_user], map: "id_user")
+}
+
+model im_undesirable_food {
+  id_undesirable_food Int     @id @default(autoincrement())
+  id_food             Int
+  id_user             Int
+  im_user             im_user @relation(fields: [id_user], references: [id_user], onUpdate: Restrict, map: "im_undesirable_food_ibfk_1")
+  im_food             im_food @relation(fields: [id_food], references: [id_food], onUpdate: Restrict, map: "im_undesirable_food_ibfk_2")
+
+  @@index([id_food, id_user], map: "id_food")
+  @@index([id_user], map: "id_user")
+}
+
+model im_user {
+  id_user               Int                   @id @default(autoincrement())
+  user_firstname        String                @db.VarChar(100)
+  user_name             String                @db.VarChar(255)
+  user_mail             String                @db.VarChar(255)
+  user_password         String                @db.VarChar(255)
+  user_birth_date       DateTime              @db.Date
+  user_inscription_date DateTime              @db.Date
+  user_gender           Int
+  user_height           Int
+  user_weight           Int
+  user_age              Int
+  user_training_level   Int
+  user_nutrition_diet   Int
+  im_health             im_health[]
+  im_nutrition          im_nutrition[]
+  im_training           im_training[]
+  im_undesirable_food   im_undesirable_food[]
+}
+
+model im_workout {
+  id_workout      Int           @id @default(autoincrement())
+  workout_point   Int
+  workout_name    String        @db.VarChar(100)
+  workout_comment Int
+  id_training     Int
+  im_exercise     im_exercise[]
+  im_training     im_training   @relation(fields: [id_training], references: [id_training], onUpdate: Restrict, map: "im_workout_ibfk_1")
+
+  @@index([id_training], map: "id_training")
+}
