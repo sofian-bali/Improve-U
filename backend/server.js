@@ -13,7 +13,6 @@ app.get("/", (req,res)=>{
 import training from './routes/training.routes.js';
 app.use('/training', training);
 
-
 // Routes nutrition
 import nutrition from './routes/nutrition.routes.js';
 app.use('/nutrition', nutrition);

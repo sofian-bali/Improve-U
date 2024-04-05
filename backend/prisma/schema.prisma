@@ -135,7 +135,7 @@ model im_recipe {
 
 model im_training {
   id_training   Int          @id @default(autoincrement())
-  training_goal Int
+  training_goal String       @db.VarChar(255)
   id_user       Int
   im_user       im_user      @relation(fields: [id_user], references: [id_user], onUpdate: Restrict, map: "im_training_ibfk_1")
   im_workout    im_workout[]
@@ -178,7 +178,7 @@ model im_workout {
   id_workout      Int           @id @default(autoincrement())
   workout_point   Int
   workout_name    String        @db.VarChar(100)
-  workout_comment Int
+  workout_comment String        @db.Text
   id_training     Int
   im_exercise     im_exercise[]
   im_training     im_training   @relation(fields: [id_training], references: [id_training], onUpdate: Restrict, map: "im_workout_ibfk_1")
