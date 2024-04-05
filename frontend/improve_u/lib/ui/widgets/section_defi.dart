@@ -1,23 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:improve_u/ui/widgets/custom_colors.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-
-
+import 'package:improve_u/theme/main_theme.dart';
 
 
 class SectionDefi extends StatelessWidget {
   const SectionDefi({super.key});
-
-  void _launchURL() async {
-    const url = 'https://www.google.com';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Impossible d\'ouvrir l\'URL $url';
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -167,10 +154,8 @@ class SectionDefi extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(8),
                                 ),
                             ),
-                            child: const ElevatedButton(
-                              onPressed: () {
-                                _launchURL,
-                              },
+                           /*  child: const TextButton(
+                              onPressed: (){,
                               child: Text(
                                         'Faire la séance',
                                         style: TextStyle(
@@ -182,7 +167,7 @@ class SectionDefi extends StatelessWidget {
                                         ),
                                     ),
                                 
-                            ),
+                            ), */
                         ),
                     ],
                 ),
