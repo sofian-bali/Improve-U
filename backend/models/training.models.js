@@ -30,4 +30,4 @@ const getExerciseByWorkout = (id_workout) => {
   });
 };
 
-export { getAllTrainingData, getTrainingDataById, getAllWorkout, getExerciseByWorkout };
+export { getAllTrainingData, getTrainingDataById, getAllWorkout,getExerciseByWorkout };
