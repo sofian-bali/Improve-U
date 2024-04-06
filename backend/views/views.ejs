@@ -10,9 +10,9 @@
     <header class="header">
       <nav class="nav">
         <ul>
-          <li class="item"><a href="#">Training</a></li>
-          <li class="item"><a href="#">Nutrition</a></li>
-          <li class="item"><a href="#">Santé</a></li>
+          <li class="item"><a href="#training">Training</a></li>
+          <li class="item"><a href="#nutrition">Nutrition</a></li>
+          <li class="item"><a href="#sante">Santé</a></li>
         </ul>
       </nav>
     </header>
@@ -20,8 +20,9 @@
     <main class="main">
       <h1 class="h1">Documentation de l'API Improve-U</h1>
       <section class="section">
-        <h2 class="h2">Training</h2>
+        <h2 id="training" class="h2">Training</h2>
         <div class="container">
+
           <div class="content">
             <h3 class="h3">Routes: '/training'</h3>
             <div class="text">
@@ -70,13 +71,15 @@
     }
 </code>
 </pre>
+          </div>
 
-            <div class="content">
-              <h3 class="h3">Routes: '/training/workout'</h3>
-              <div class="text">
-                Permet de récupérer toutes les séances de l'utilisateur au format suivant :
-              </div>
-              <pre>
+          <div class="content">
+            <h3 class="h3">Routes: '/training/workout'</h3>
+            <div class="text">
+              Permet de récupérer toutes les séances de l'utilisateur au format
+              suivant :
+            </div>
+            <pre>
 <code>
     {
         "id_workout": 1,
@@ -94,7 +97,6 @@
     }
 </code>
 </pre>
-            </div>
           </div>
 
           <div class="content">
@@ -135,13 +137,38 @@
 </code>
             </pre>
           </div>
+
         </div>
       </section>
       <section class="section">
-        <h2 class="h2">Nutrition</h2>
+        <h2 id="nutrition" class="h2">Nutrition</h2>
+        <div class="container">
+
+            <div class="content">
+                <h3 class="h3">Routes: '/nutrition'</h3>
+                <div class="text">
+                  Permet de récupérer les informations de nutrition de l'utilisateur au
+                  format suivant :
+                </div>
+                <pre>
+    <code>
+        {
+            "id_nutrition": 1,
+            "nutrition_goal": 1800,
+            "nutrition_goal_calories": 2000,
+            "nutrition_goal_carbs": 300,
+            "nutrition_goal_prots": 122,
+            "nutrition_goal_fats": 70,
+            "id_user": 1
+        }
+    </code>
+    </pre>
+              </div>
+
+        </div>
       </section>
       <section class="section">
-        <h2 class="h2">Santé</h2>
+        <h2 id="sante" class="h2">Santé</h2>
       </section>
     </main>
   </body>
