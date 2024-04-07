@@ -130,7 +130,7 @@ model im_recipe {
   im_food   im_food @relation(fields: [id_food], references: [id_food], onUpdate: Restrict, map: "im_recipe_ibfk_2")
 
   @@index([id_food], map: "id_food")
-  @@index([id_meal, id_food], map: "id_meal")
+  @@index([id_meal], map: "id_meal")
 }
 
 model im_training {

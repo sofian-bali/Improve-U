@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-const getAllTrainingData = () => {
+const getTrainingData = () => {
   return prisma.im_training.findMany();
 };
 
@@ -30,4 +30,4 @@ const getExerciseByWorkout = (id_workout) => {
   });
 };
 
-export { getAllTrainingData, getTrainingDataById, getAllWorkout,getExerciseByWorkout };
+export { getTrainingData, getTrainingDataById, getAllWorkout,getExerciseByWorkout };

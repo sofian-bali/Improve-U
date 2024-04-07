@@ -42,7 +42,7 @@ body {
 }
 
 .nav .item a:hover {
-    color: #0066cc;
+    color: #386692;
     text-decoration: underline;
 }
 
@@ -73,6 +73,26 @@ body {
 .content {
     padding: .5rem;
     margin-bottom: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: .5rem 1.5rem;
+    background-color: #386692;
+    color: #f2f2f2;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0052a3;
 }
 
 .content pre {

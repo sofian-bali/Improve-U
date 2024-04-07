@@ -1,9 +1,9 @@
 import express from 'express';
-import { getAllTrainingData, getTrainingDataById, getAllWorkout, getExerciseByWorkout } from '../models/training.models.js';
+import { getTrainingData, getTrainingDataById, getAllWorkout, getExerciseByWorkout } from '../models/training.models.js';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    getAllTrainingData().then(training => res.json(training))
+    getTrainingData().then(training => res.json(training))
 });
 
 router.get('/:id([0-9]+)', (req, res) => {
@@ -11,7 +11,6 @@ router.get('/:id([0-9]+)', (req, res) => {
 });
 
 // workout
-// à faire 
 router.get('/workout', (req, res) => {
     getAllWorkout().then(workout => res.json(workout))
 });
