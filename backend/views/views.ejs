@@ -21,6 +21,7 @@
     <main class="main">
       <h1 class="h1">Documentation de l'API Improve-U</h1>
 
+      <!-- User section -->
       <section class="section">
         <h2 id="user" class="h2">User</h2>
         <div class="container">
@@ -129,6 +130,7 @@
         </div>
       </section>
 
+      <!-- Training section -->
       <section class="section">
         <h2 id="training" class="h2">Training</h2>
         <div class="container">
@@ -273,6 +275,7 @@
         </div>
       </section>
 
+      <!-- Nutrition section -->
       <section class="section">
         <h2 id="nutrition" class="h2">Nutrition</h2>
         <div class="container">
@@ -526,8 +529,42 @@
         </div>
       </section>
 
+      <!-- Santé section -->
       <section class="section">
         <h2 id="sante" class="h2">Santé</h2>
+        <div class="container">
+
+            <!-- Route /health -->
+            <div class="content">
+              <div class="title">
+                <h3 class="h3">Routes: '/health/:id'</h3>
+                <a class="btn" href="http://localhost:8080/health/1"
+                  >/health/:id</a
+                >
+              </div>
+              <div class="text">
+                Permet de récupérer les objectifs de santé d'un utilisateur
+                au format suivant :
+              </div>
+              <pre>
+  <code>
+    {
+        "id_health": 1,
+        "id_user": 1,
+        "im_health_goal": [
+            {
+                "id_health_goal": 1,
+                "health_goal_steps": 10000,
+                "health_goal_weight": 70,
+                "health_goal_sleep": 8,
+                "health_goal_water": 8,
+                "id_health": 1
+            }
+        ]
+    }
+  </code>
+  </pre>
+            </div>
       </section>
     </main>
   </body>
