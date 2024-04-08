@@ -10,6 +10,7 @@
     <header class="header">
       <nav class="nav">
         <ul>
+          <li class="item"><a href="#user">User</a></li>
           <li class="item"><a href="#training">Training</a></li>
           <li class="item"><a href="#nutrition">Nutrition</a></li>
           <li class="item"><a href="#sante">Santé</a></li>
@@ -19,6 +20,11 @@
 
     <main class="main">
       <h1 class="h1">Documentation de l'API Improve-U</h1>
+
+      <section class="section">
+        <h2 id="user" class="h2">User</h2>
+      </section>
+
       <section class="section">
         <h2 id="training" class="h2">Training</h2>
         <div class="container">
@@ -367,7 +373,53 @@
 </pre>
           </div>
 
-          <!-- Route /nutrition/undesirable_food -->
+          <!-- Route /nutrition/undesirable_food/:id -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/nutrition/undesirable_food/:id'</h3>
+              <a class="btn" href="http://localhost:8080/nutrition/undesirable_food/1"
+                >/nutrition/undesirable_food/:id</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer les aliments indésirables pour un utilisateur au format suivant :
+            </div>
+            <pre>
+<code>
+    [
+        {
+            "id_undesirable_food": 1,
+            "id_food": 2,
+            "id_user": 1,
+            "im_food": {
+                "id_food": 2,
+                "food_name": "Rice",
+                "food_type": "Glucides",
+                "food_calories": 200,
+                "food_carbs": 45,
+                "food_prots": 5,
+                "food_fats": 1
+            }
+        },
+        {
+            "id_undesirable_food": 2,
+            "id_food": 1,
+            "id_user": 1,
+            "im_food": {
+                "id_food": 1,
+                "food_name": "Chicken Breast",
+                "food_type": "Proteines",
+                "food_calories": 150,
+                "food_carbs": 0,
+                "food_prots": 30,
+                "food_fats": 3
+            }
+        }
+    ]
+</code>
+</pre>
+          </div>
+
 
         </div>
       </section>

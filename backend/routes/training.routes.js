@@ -10,7 +10,7 @@ router.get('/:id([0-9]+)', (req, res) => {
     getTrainingDataById(+req.params.id).then(training => res.json(training))
 });
 
-// workout
+// Workout
 router.get('/workout', (req, res) => {
     getAllWorkout().then(workout => res.json(workout))
 });

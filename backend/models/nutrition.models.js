@@ -14,6 +14,7 @@ const getNutritionDataById = (id_nutrition) => {
   });
 };
 
+// Repas
 const getAllMeal = () => {
   return prisma.im_meal.findMany();
 };
@@ -31,4 +32,13 @@ const getRecipeByMeal = (id_meal) => {
   });
 };
 
-export { getNutritionData, getNutritionDataById, getAllMeal, getRecipeByMeal };
+const getAllUndesirableFood = (id_user) => {
+    return prisma.im_undesirable_food.findMany({
+        where: { id_user: id_user },
+        include: {
+            im_food: true,
+        },
+    });
+}
+
+export { getNutritionData, getNutritionDataById, getAllMeal, getRecipeByMeal, getAllUndesirableFood };
