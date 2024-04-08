@@ -15,6 +15,10 @@ app.get("/", (req,res)=>{
     res.status(200).render('views');
 });
 
+// Routes user
+import user from './routes/user.routes.js';
+app.use('/user', user);
+
 // Routes training
 import training from './routes/training.routes.js';
 app.use('/training', training);

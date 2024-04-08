@@ -15,12 +15,12 @@ router.get('/meal', (req, res) => {
     getAllMeal().then(meal => res.json(meal))
 });
 
-router.get('/meal/:id', (req, res) => {
+router.get('/meal/:id([0-9]+)', (req, res) => {
     getRecipeByMeal(+req.params.id).then(meal => res.json(meal))
 });
 
 // Aliments indésirable
-router.get('/undesirable_food/:id', (req, res) => {
+router.get('/undesirable_food/:id([0-9]+)', (req, res) => {
     getAllUndesirableFood(+req.params.id).then(undesirable_food => res.json(undesirable_food))
 });
 

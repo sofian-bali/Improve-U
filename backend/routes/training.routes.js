@@ -15,7 +15,7 @@ router.get('/workout', (req, res) => {
     getAllWorkout().then(workout => res.json(workout))
 });
 
-router.get('/workout/:id', (req, res) => {
+router.get('/workout/:id([0-9]+)', (req, res) => {
     getExerciseByWorkout(+req.params.id).then(workout => res.json(workout))
 });
 
