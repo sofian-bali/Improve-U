@@ -11,12 +11,13 @@ const getHealthData = (id_user) => {
 }
 
 const getHealthDataByDay = (date) => {
-    return prisma.im_health_goal_daily.findUnique({
-        where: { health_goal_daily_date: date },
+    // Récupérer la date complète
+    const fullDate = new Date(date);
+
+    return prisma.im_health_goal_daily.findMany({
+        where: { health_goal_daily_date: fullDate },
     });
 }
 
-
-// 2024-04-01
 
 export { getHealthData, getHealthDataByDay };
