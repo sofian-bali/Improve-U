@@ -5,10 +5,12 @@ import 'package:improve_u/main.dart';
 import 'package:improve_u/ui/widgets/custom_app_bar.dart';
 import 'package:improve_u/ui/widgets/section_defi.dart';
 import 'package:improve_u/ui/widgets/custom_bottom_bar.dart';
+import 'package:improve_u/theme/main_theme.dart';
 
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
 
   @override
