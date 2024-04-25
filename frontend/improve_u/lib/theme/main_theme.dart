@@ -48,6 +48,7 @@ class CustomColors {
 
 ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
+<<<<<<< HEAD
   colorScheme: const ColorScheme.light(
     primary: CustomColors.primaireBleu500,
     onPrimary: CustomColors.primaireBleu900,
@@ -71,6 +72,32 @@ ThemeData lightMode = ThemeData(
     onSurface: CustomColors.neutreGris700,
     surfaceVariant: CustomColors.neutreGris100,
     onSurfaceVariant: CustomColors.neutreGris300,
+=======
+  colorScheme: const ColorScheme(
+    brightness: Brightness.light,
+    primary: Color(0xFF8AA8E5),
+    onPrimary: Color(0xFFE6EAF2),
+    primaryContainer: Color(0xFFACBFE5),
+    onPrimaryContainer: Color(0xFF6C83B2),
+    secondary: Color(0xFF7BD94C),
+    onSecondary: Color(0xFFE2F2DA),
+    secondaryContainer: Color(0xFFA1E57E),
+    onSecondaryContainer: Color(0xFF6BB248),
+    tertiary: Color(0xFFE55069),
+    onTertiary: Color(0xFFF2DADE),
+    tertiaryContainer: Color(0xFFE57E90),
+    onTertiaryContainer: Color(0xFFB23E52),
+    error: Color(0xFFCC3D55),
+    onError: Color(0xFFF2DADE),
+    errorContainer: Color(0xFFD98290),
+    onErrorContainer: Color(0xFF991F47),
+    background: Color(0xFFF1F2F3),
+    onBackground: Color(0xFFF3F4F6),
+    surface: Color(0xFFD1D5DB),
+    onSurface: Color(0xFF9CA3AF),
+    surfaceVariant: Color(0xFF4B5563),
+    onSurfaceVariant: Color(0xFF374151),
+>>>>>>> 72397e47b29d377517b50a7c6d8fb313c366c2fd
   ),
   textTheme: const TextTheme(
     displayLarge: TextStyle(
@@ -103,6 +130,7 @@ ThemeData lightMode = ThemeData(
 
 ThemeData darkMode = ThemeData(
   brightness: Brightness.dark,
+<<<<<<< HEAD
   colorScheme: const ColorScheme.dark(
     primary: CustomColors.primaireBleu500,
     onPrimary: CustomColors.primaireBleu50,
@@ -126,6 +154,32 @@ ThemeData darkMode = ThemeData(
     onSurface: CustomColors.neutreGris50,
     surfaceVariant: CustomColors.neutreGris300,
     onSurfaceVariant: CustomColors.neutreGris100,
+=======
+  colorScheme: const ColorScheme(
+    brightness: Brightness.dark,
+    primary: Color(0xFF8AA8E5),
+    onPrimary: Color(0xFF000000),
+    primaryContainer: Color(0xFFACBFE5),
+    onPrimaryContainer: Color(0xFFFFFFFF),
+    secondary: Color(0xFF7BD94C),
+    onSecondary: Color(0xFF000000),
+    secondaryContainer: Color(0xFFA1E57E),
+    onSecondaryContainer: Color(0xFFFFFFFF),
+    tertiary: Color(0xFFE55069),
+    onTertiary: Color(0xFF000000),
+    tertiaryContainer: Color(0xFFE57E90),
+    onTertiaryContainer: Color(0xFFFFFFFF),
+    error: Color(0xFFCC3D55),
+    onError: Color(0xFF000000),
+    errorContainer: Color(0xFFD98290),
+    onErrorContainer: Color(0xFFFFFFFF),
+    background: Color(0xFF121212),
+    onBackground: Color(0xFFFFFFFF),
+    surface: Color(0xFF333333),
+    onSurface: Color(0xFFFFFFFF),
+    surfaceVariant: Color(0xFF4B5563),
+    onSurfaceVariant: Color(0xFFFFFFFF),
+>>>>>>> 72397e47b29d377517b50a7c6d8fb313c366c2fd
   ),
   textTheme: const TextTheme(
     displayLarge: TextStyle(
@@ -152,4 +206,8 @@ ThemeData darkMode = ThemeData(
         fontFamily: 'DM sans',
         fontStyle: FontStyle.italic),
   ),
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> 72397e47b29d377517b50a7c6d8fb313c366c2fd

@@ -4,15 +4,24 @@ import express from 'express';
 const app = express();
 const port = 8080;
 
+// Utilisation du template ejs
+app.set('view engine', 'ejs');
+
+// Middleware
+app.use(express.static('public'));
+
 // Affichage de la page Home
 app.get("/", (req,res)=>{
-    res.status(200).json({"message": "Server is ready"});
+    res.status(200).render('views');
 });
+
+// Routes user
+import user from './routes/user.routes.js';
+app.use('/user', user);
 
 // Routes training
 import training from './routes/training.routes.js';
 app.use('/training', training);
-
 
 // Routes nutrition
 import nutrition from './routes/nutrition.routes.js';

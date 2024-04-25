@@ -1,3 +1,5 @@
-node_modules
-# Keep environment variables out of version control
-.env
+# Ignore les fichiers système
+.DS_Store
+
+# Ignore le répertoire node_modules
+node_modules/
