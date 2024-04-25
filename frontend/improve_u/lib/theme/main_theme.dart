@@ -17,7 +17,8 @@ class CustomColors {
 
   static const Color secondaireVert50 = Color(0xFFF6FCF2);
   static const Color secondaireVert300 = Color(0xFFA1E57E);
-  static const Color secondaireVert500 = Color(0xFF6BB248);
+  static const Color secondaireVert500 = Color(0xFF7BD94C);
+  static const Color secondaireVert700 = Color(0xFF6BB248);
   static const Color secondaireVert900 = Color(0xFF2C481E);
 
   static const Color tertiaireRouge50 = Color(0xFFFCF2F4);
@@ -44,3 +45,111 @@ class CustomColors {
   static const Color erreurErreur700 = Color(0xFF991F33);
   static const Color erreurErreur900 = Color(0xFF801A2B);
 }
+
+ThemeData lightMode = ThemeData(
+  brightness: Brightness.light,
+  colorScheme: const ColorScheme.light(
+    primary: CustomColors.primaireBleu500,
+    onPrimary: CustomColors.primaireBleu900,
+    primaryContainer: CustomColors.primaireBleu50,
+    onPrimaryContainer: CustomColors.primaireBleu700,
+    secondary: CustomColors.secondaireVert500,
+    onSecondary: CustomColors.secondaireVert900,
+    secondaryContainer: CustomColors.secondaireVert50,
+    onSecondaryContainer: CustomColors.secondaireVert700,
+    tertiary: CustomColors.tertiaireRouge500,
+    onTertiary: CustomColors.tertiaireRouge900,
+    tertiaryContainer: CustomColors.tertiaireRouge50,
+    onTertiaryContainer: CustomColors.tertiaireRouge700,
+    error: CustomColors.erreurErreur500,
+    onError: CustomColors.erreurErreur900,
+    errorContainer: CustomColors.erreurErreur50,
+    onErrorContainer: CustomColors.erreurErreur700,
+    background: CustomColors.neutreGris0,
+    onBackground: CustomColors.neutreGris900,
+    surface: CustomColors.neutreGris50,
+    onSurface: CustomColors.neutreGris700,
+    surfaceVariant: CustomColors.neutreGris100,
+    onSurfaceVariant: CustomColors.neutreGris300,
+  ),
+  textTheme: const TextTheme(
+    displayLarge: TextStyle(
+        fontSize: 34.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    displayMedium: TextStyle(
+        fontSize: 28.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    displaySmall: TextStyle(
+        fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    headlineLarge: TextStyle(
+        fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    headlineMedium: TextStyle(
+        fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    headlineSmall: TextStyle(
+        fontSize: 15.0,
+        fontWeight: FontWeight.normal,
+        fontFamily: 'DM sans'), // Ajout de headline6
+    labelLarge: TextStyle(
+        fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    bodyLarge: TextStyle(
+        fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+    bodyMedium: TextStyle(
+        fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+    bodySmall: TextStyle(
+        fontSize: 12.0,
+        fontWeight: FontWeight.normal,
+        fontFamily: 'DM sans',
+        fontStyle: FontStyle.italic),
+  ),
+);
+
+ThemeData darkMode = ThemeData(
+  brightness: Brightness.dark,
+  colorScheme: const ColorScheme.dark(
+    primary: CustomColors.primaireBleu500,
+    onPrimary: CustomColors.primaireBleu50,
+    primaryContainer: CustomColors.primaireBleu700,
+    onPrimaryContainer: CustomColors.primaireBleu300,
+    secondary: CustomColors.secondaireVert500,
+    onSecondary: CustomColors.secondaireVert50,
+    secondaryContainer: CustomColors.secondaireVert700,
+    onSecondaryContainer: CustomColors.secondaireVert300,
+    tertiary: CustomColors.tertiaireRouge500,
+    onTertiary: CustomColors.tertiaireRouge50,
+    tertiaryContainer: CustomColors.tertiaireRouge700,
+    onTertiaryContainer: CustomColors.tertiaireRouge300,
+    error: CustomColors.erreurErreur500,
+    onError: CustomColors.erreurErreur50,
+    errorContainer: CustomColors.erreurErreur700,
+    onErrorContainer: CustomColors.erreurErreur300,
+    background: CustomColors.neutreGris900,
+    onBackground: CustomColors.neutreGris100,
+    surface: CustomColors.neutreGris700,
+    onSurface: CustomColors.neutreGris50,
+    surfaceVariant: CustomColors.neutreGris300,
+    onSurfaceVariant: CustomColors.neutreGris100,
+  ),
+  textTheme: const TextTheme(
+    displayLarge: TextStyle(
+        fontSize: 34.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    displayMedium: TextStyle(
+        fontSize: 28.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    displaySmall: TextStyle(
+        fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    headlineLarge: TextStyle(
+        fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    headlineMedium: TextStyle(
+        fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    headlineSmall: TextStyle(
+        fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    labelLarge: TextStyle(
+        fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    bodyLarge: TextStyle(
+        fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+    bodyMedium: TextStyle(
+        fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+    bodySmall: TextStyle(
+        fontSize: 12.0,
+        fontWeight: FontWeight.normal,
+        fontFamily: 'DM sans',
+        fontStyle: FontStyle.italic),
+  ),
+);
