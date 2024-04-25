@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'Improve-U',
       themeMode: ThemeMode.system,
       theme: lightMode,
-      darkTheme: darkMode,      routes: AppRouter.routes,
+      darkTheme: darkMode,
+      routes: AppRouter.routes,
       debugShowCheckedModeBanner: false,
       initialRoute: AppRouter.homePage,
     );
