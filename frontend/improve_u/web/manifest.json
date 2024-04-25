@@ -3,9 +3,9 @@
     "short_name": "improve_u",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#hexcode",
+    "theme_color": "#hexcode",
+    "description": "Improve-U est une application tout-en-un qui simplifie la vie des amateurs de sport et de santé. Suivez vos habitudes sportives, alimentaires et de santé tout en bénéficiant de conseils personnalisés et d'une approche écoresponsable. Avec une interface conviviale, Improve-U vous aide à atteindre vos objectifs de manière motivante et pratique.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

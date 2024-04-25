@@ -1,0 +1,106 @@
+/* styles.css */
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav .item {
+    padding: .5rem 1rem;
+}
+
+.nav .item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav .item a:hover {
+    color: #386692;
+    text-decoration: underline;
+}
+
+/* Main styles */
+.main {
+    padding: 24px 32px;
+}
+
+.h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.h3 {
+    font-size: 20px;
+    margin-bottom: .5rem;
+}
+
+.content {
+    padding: .5rem;
+    margin-bottom: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: .5rem 1.5rem;
+    background-color: #386692;
+    color: #f2f2f2;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0052a3;
+}
+
+.content pre {
+    background-color: #343434;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.content pre code {
+    color: #f2f2f2;
+}

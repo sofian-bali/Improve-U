@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation de l'API Improve-U</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <ul>
+          <li class="item"><a href="#user">User</a></li>
+          <li class="item"><a href="#training">Training</a></li>
+          <li class="item"><a href="#nutrition">Nutrition</a></li>
+          <li class="item"><a href="#sante">Santé</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <h1 class="h1">Documentation de l'API Improve-U</h1>
+
+      <!-- User section -->
+      <section class="section">
+        <h2 id="user" class="h2">User</h2>
+        <div class="container">
+          <!-- Route /user -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/user'</h3>
+              <a class="btn" href="http://localhost:8080/user">/user</a>
+            </div>
+            <div class="text">
+              Permet de récupérer la liste de tous les utilisateurs au format
+              suivant :
+            </div>
+            <pre>
+    <code>
+    [
+        {
+            "id_user": 1,
+            "user_firstname": "John",
+            "user_name": "Doe",
+            "user_mail": "john@example.com",
+            "user_password": "password1",
+            "user_birth_date": "1990-01-01T00:00:00.000Z",
+            "user_inscription_date": "2020-01-01T00:00:00.000Z",
+            "user_gender": 1,
+            "user_height": 180,
+            "user_weight": 75,
+            "user_age": 34,
+            "user_training_level": 3,
+            "user_nutrition_diet": 1
+        },
+        {
+            "id_user": 2,
+            "user_firstname": "Jane",
+            "user_name": "Smith",
+            "user_mail": "jane@example.com",
+            "user_password": "password2",
+            "user_birth_date": "1985-05-05T00:00:00.000Z",
+            "user_inscription_date": "2020-01-01T00:00:00.000Z",
+            "user_gender": 2,
+            "user_height": 165,
+            "user_weight": 60,
+            "user_age": 39,
+            "user_training_level": 2,
+            "user_nutrition_diet": 2
+        }
+    ]
+    </code>
+    </pre>
+          </div>
+
+          <!-- Routes /user/:id -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/user/:id'</h3>
+              <a class="btn" href="http://localhost:8080/user/1">/user/:id</a>
+            </div>
+            <div class="text">
+              Permet de récupérer un utilisateur précis et d'afficher ces informations de training, de nutrition et de santé au format
+              suivant :
+            </div>
+            <pre>
+    <code>
+    {
+        "id_user": 1,
+        "user_firstname": "John",
+        "user_name": "Doe",
+        "user_mail": "john@example.com",
+        "user_password": "password1",
+        "user_birth_date": "1990-01-01T00:00:00.000Z",
+        "user_inscription_date": "2020-01-01T00:00:00.000Z",
+        "user_gender": 1,
+        "user_height": 180,
+        "user_weight": 75,
+        "user_age": 34,
+        "user_training_level": 3,
+        "user_nutrition_diet": 1,
+        "im_training": [
+            {
+                "id_training": 1,
+                "training_goal": "Perte de poids",
+                "id_user": 1
+            }
+        ],
+        "im_nutrition": [
+            {
+                "id_nutrition": 1,
+                "nutrition_goal": 1800,
+                "nutrition_goal_calories": 2000,
+                "nutrition_goal_carbs": 300,
+                "nutrition_goal_prots": 122,
+                "nutrition_goal_fats": 70,
+                "id_user": 1
+            }
+        ],
+        "im_health": [
+            {
+                "id_health": 1,
+                "id_user": 1
+            }
+        ]
+    }
+    </code>
+    </pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Training section -->
+      <section class="section">
+        <h2 id="training" class="h2">Training</h2>
+        <div class="container">
+          <!-- Route /training -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/training'</h3>
+              <a class="btn" href="http://localhost:8080/training">/training</a>
+            </div>
+            <div class="text">
+              Permet de récupérer le plan d'entraînement de l'utilisateur au
+              format suivant :
+            </div>
+            <pre>
+<code>
+    {
+        "id_training": 1,
+        "training_goal": "Perte de poids",
+        "id_user": 1
+    }
+</code>
+</pre>
+          </div>
+
+          <!-- Route /training/:id -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/training/:id'</h3>
+              <a class="btn" href="http://localhost:8080/training/1"
+                >/training/:id</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer toutes les séances de l'utilisateur et les
+              séances prévues dans ce dernier au format suivant :
+            </div>
+            <pre>
+<code>
+    {
+        "id_training": 1,
+        "training_goal": "Perte de poids",
+        "id_user": 1,
+        "im_workout": [
+            {
+                "id_workout": 1,
+                "workout_point": 100,
+                "workout_name": "Séance push",
+                "workout_comment": "texte expliquant ma séance push",
+                "id_training": 1
+            },
+            {
+                "id_workout": 2,
+                "workout_point": 100,
+                "workout_name": "Séance pull",
+                "workout_comment": "texte expliquant ma séance pull",
+                "id_training": 1
+            }
+        ]
+    }
+</code>
+</pre>
+          </div>
+
+          <!-- Route /training/workout -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/training/workout'</h3>
+              <a class="btn" href="http://localhost:8080/training/workout"
+                >/training/workout</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer toutes les séances de l'utilisateur au format
+              suivant :
+            </div>
+            <pre>
+<code>
+    {
+        "id_workout": 1,
+        "workout_point": 100,
+        "workout_name": "Séance push",
+        "workout_comment": "texte expliquant ma séance push",
+        "id_training": 1
+    },
+    {
+        "id_workout": 2,
+        "workout_point": 100,
+        "workout_name": "Séance pull",
+        "workout_comment": "texte expliquant ma séance pull",
+        "id_training": 1
+    }
+</code>
+</pre>
+          </div>
+
+          <!-- Route /training/workout/:id -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/training/workout/:id'</h3>
+              <a class="btn" href="http://localhost:8080/training/workout/1"
+                >/training/workout/:id</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer tous les exercices lié à l'id d'une séance au
+              format suivant :
+            </div>
+            <pre>
+<code>
+    {
+        "id_workout": 1,
+        "workout_point": 100,
+        "workout_name": "Séance push",
+        "workout_comment": "texte expliquant ma séance push",
+        "id_training": 1,
+        "im_exercise": [
+            {
+                "id_exercise": 1,
+                "exercise_name": "Développé couché",
+                "exercise_type": "Barre",
+                "exercise_rest_time": 120,
+                "exercise_reps": 8,
+                "exercise_series": 3,
+                "exercise_description": "Pousser la barre au dessus de ses pecs",
+                "id_workout": 1
+            },
+            {
+                "id_exercise": 2,
+                "exercise_name": "Développé militaire",
+                "exercise_type": "Haltères",
+                "exercise_rest_time": 90,
+                "exercise_reps": 10,
+                "exercise_series": 3,
+                "exercise_description": "Pousser les haltères au dessus de sa tête",
+                "id_workout": 1
+            }
+        ]
+    }
+</code>
+            </pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nutrition section -->
+      <section class="section">
+        <h2 id="nutrition" class="h2">Nutrition</h2>
+        <div class="container">
+          <!-- Route /nutrition -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/nutrition'</h3>
+              <a class="btn" href="http://localhost:8080/nutrition"
+                >/nutrition</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer les informations de nutrition de l'utilisateur
+              au format suivant :
+            </div>
+            <pre>
+<code>
+    {
+        "id_nutrition": 1,
+        "nutrition_goal": 1800,
+        "nutrition_goal_calories": 2000,
+        "nutrition_goal_carbs": 300,
+        "nutrition_goal_prots": 122,
+        "nutrition_goal_fats": 70,
+        "id_user": 1
+    }
+</code>
+</pre>
+          </div>
+
+          <!-- Route /nutrition/:id -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/nutrition/:id'</h3>
+              <a class="btn" href="http://localhost:8080/nutrition/1"
+                >/nutrition/:id</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer les informations de nutrition de l'utilisateur
+              et les repas de ce dernier au format suivant :
+            </div>
+            <pre>
+<code>
+    {
+        "id_nutrition": 1,
+        "nutrition_goal": 1800,
+        "nutrition_goal_calories": 2000,
+        "nutrition_goal_carbs": 300,
+        "nutrition_goal_prots": 122,
+        "nutrition_goal_fats": 70,
+        "id_user": 1,
+        "im_meal": [
+            {
+                "id_meal": 1,
+                "meal_name": "Grilled Salmon",
+                "meal_quantity": 1,
+                "meal_calories": 200,
+                "meal_carbs": 0,
+                "meal_prots": 40,
+                "meal_fats": 5,
+                "meal_description": "Grilled salmon with vegetables",
+                "meal_length": 30,
+                "meal_image": "salmon.jpg",
+                "meal_difficulty": 2,
+                "meal_season": 1,
+                "id_nutrition": 1
+            },
+            {
+                "id_meal": 2,
+                "meal_name": "Pasta Carbonara",
+                "meal_quantity": 1,
+                "meal_calories": 500,
+                "meal_carbs": 70,
+                "meal_prots": 20,
+                "meal_fats": 15,
+                "meal_description": "Classic pasta carbonara",
+                "meal_length": 45,
+                "meal_image": "pasta.jpg",
+                "meal_difficulty": 3,
+                "meal_season": 2,
+                "id_nutrition": 1
+            }
+        ]
+    }
+</code>
+</pre>
+          </div>
+
+          <!-- Route /nutrition/meal -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/nutrition/meal'</h3>
+              <a class="btn" href="http://localhost:8080/nutrition/meal"
+                >/nutrition/meal</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer les repas de l'utilisateur au format suivant :
+            </div>
+            <pre>
+<code>
+    [
+        {
+            "id_meal": 1,
+            "meal_name": "Grilled Salmon",
+            "meal_quantity": 1,
+            "meal_calories": 200,
+            "meal_carbs": 0,
+            "meal_prots": 40,
+            "meal_fats": 5,
+            "meal_description": "Grilled salmon with vegetables",
+            "meal_length": 30,
+            "meal_image": "salmon.jpg",
+            "meal_difficulty": 2,
+            "meal_season": 1,
+            "id_nutrition": 1
+        },
+        {
+            "id_meal": 2,
+            "meal_name": "Pasta Carbonara",
+            "meal_quantity": 1,
+            "meal_calories": 500,
+            "meal_carbs": 70,
+            "meal_prots": 20,
+            "meal_fats": 15,
+            "meal_description": "Classic pasta carbonara",
+            "meal_length": 45,
+            "meal_image": "pasta.jpg",
+            "meal_difficulty": 3,
+            "meal_season": 2,
+            "id_nutrition": 1
+        }
+    ]
+</code>
+</pre>
+          </div>
+
+          <!-- Route /nutrition/meal/:id -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/nutrition/meal/:id'</h3>
+              <a class="btn" href="http://localhost:8080/nutrition/meal/1"
+                >/nutrition/meal/:id</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer les aliments présent dans un repas au format
+              suivant :
+            </div>
+            <pre>
+<code>
+    {
+        "id_meal": 1,
+        "meal_name": "Grilled Salmon",
+        "meal_quantity": 1,
+        "meal_calories": 200,
+        "meal_carbs": 0,
+        "meal_prots": 40,
+        "meal_fats": 5,
+        "meal_description": "Grilled salmon with vegetables",
+        "meal_length": 30,
+        "meal_image": "salmon.jpg",
+        "meal_difficulty": 2,
+        "meal_season": 1,
+        "id_nutrition": 1,
+        "im_recipe": [
+            {
+                "id_recipe": 1,
+                "id_meal": 1,
+                "id_food": 1,
+                "im_food": {
+                    "id_food": 1,
+                    "food_name": "Chicken Breast",
+                    "food_type": "Proteines",
+                    "food_calories": 150,
+                    "food_carbs": 0,
+                    "food_prots": 30,
+                    "food_fats": 3
+                }
+            },
+                {
+                    "id_recipe": 2,
+                    "id_meal": 1,
+                    "id_food": 2,
+                    "im_food": {
+                    "id_food": 2,
+                    "food_name": "Rice",
+                    "food_type": "Glucides",
+                    "food_calories": 200,
+                    "food_carbs": 45,
+                    "food_prots": 5,
+                    "food_fats": 1
+                }
+            }
+        ]
+    }
+</code>
+</pre>
+          </div>
+
+          <!-- Route /nutrition/undesirable_food/:id -->
+          <div class="content">
+            <div class="title">
+              <h3 class="h3">Routes: '/nutrition/undesirable_food/:id'</h3>
+              <a
+                class="btn"
+                href="http://localhost:8080/nutrition/undesirable_food/1"
+                >/nutrition/undesirable_food/:id</a
+              >
+            </div>
+            <div class="text">
+              Permet de récupérer les aliments indésirables pour un utilisateur
+              au format suivant :
+            </div>
+            <pre>
+<code>
+    [
+        {
+            "id_undesirable_food": 1,
+            "id_food": 2,
+            "id_user": 1,
+            "im_food": {
+                "id_food": 2,
+                "food_name": "Rice",
+                "food_type": "Glucides",
+                "food_calories": 200,
+                "food_carbs": 45,
+                "food_prots": 5,
+                "food_fats": 1
+            }
+        },
+        {
+            "id_undesirable_food": 2,
+            "id_food": 1,
+            "id_user": 1,
+            "im_food": {
+                "id_food": 1,
+                "food_name": "Chicken Breast",
+                "food_type": "Proteines",
+                "food_calories": 150,
+                "food_carbs": 0,
+                "food_prots": 30,
+                "food_fats": 3
+            }
+        }
+    ]
+</code>
+</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Santé section -->
+      <section class="section">
+        <h2 id="sante" class="h2">Santé</h2>
+        <div class="container">
+
+            <!-- Route /health -->
+            <div class="content">
+              <div class="title">
+                <h3 class="h3">Routes: '/health/:id'</h3>
+                <a class="btn" href="http://localhost:8080/health/1"
+                  >/health/:id</a
+                >
+              </div>
+              <div class="text">
+                Permet de récupérer les objectifs de santé d'un utilisateur
+                au format suivant :
+              </div>
+              <pre>
+  <code>
+    {
+        "id_health": 1,
+        "id_user": 1,
+        "im_health_goal": [
+            {
+                "id_health_goal": 1,
+                "health_goal_steps": 10000,
+                "health_goal_weight": 70,
+                "health_goal_sleep": 8,
+                "health_goal_water": 8,
+                "id_health": 1
+            }
+        ]
+    }
+  </code>
+  </pre>
+            </div>
+
+            <!-- Route /health/date/:date -->
+            <div class="content">
+              <div class="title">
+                <h3 class="h3">Routes: '/health/date/:date'</h3>
+                <a class="btn" href="http://localhost:8080/health/date/2024-04-01"
+                  >/health/date/:date</a
+                >
+              </div>
+              <div class="text">
+                Permet de récupérer les objectifs de santé d'un utilisateur réalisé un jour précis en passant en paramêtre la date (exemple: '2024-04-01')
+                au format suivant :
+              </div>
+              <pre>
+  <code>
+    {
+      "id_health_goal_daily": 2,
+      "health_goal_daily_date": "2024-04-02T00:00:00.000Z",
+      "health_goal_daily_steps": 10000,
+      "health_goal_daily_weight": 67,
+      "health_goal_daily_sleep": 7,
+      "health_goal_daily_water": 9,
+      "id_health_goal": 2
+    }
+  </code>
+  </pre>
+            </div>
+
+      </section>
+    </main>
+  </body>
+</html>
