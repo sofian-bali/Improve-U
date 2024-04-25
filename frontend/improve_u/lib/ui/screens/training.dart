@@ -17,7 +17,7 @@ class TrainingPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SectionDefiSport(points: '2000', info_defi_seances: 'Faire 10 pompes en moins d’une minutes',),
-            SectionStatistiqueSport(statisticNumber: '12',  statisticDescription: '',),
+            SectionStatistiqueSport(statisticNumber: '12',  statisticDescription: 'Faire 10 pompes en moins d’une minute',),
           ],
       ),
 bottomNavigationBar: CustomBottomAppBar(),
