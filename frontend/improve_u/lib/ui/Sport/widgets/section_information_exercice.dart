@@ -6,80 +6,95 @@ class SectionInformationExercice extends StatelessWidget {
   final List<List<String>> tableData;
 
   const SectionInformationExercice({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.tableData,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final BuildContext scaffoldContext = context;
 
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 16.0),
-          Text(
-            description,
-            style: TextStyle(
-              fontSize: 16.0,
-            ),
-          ),
-          const SizedBox(height: 16.0),
-          Table(
-            border: TableBorder.all(color: Colors.white),
-            children: [
-              _buildTableRow(
-                tableData[0],
-                theme.colorScheme.onPrimaryContainer,
-                false,
-                theme,
-                scaffoldContext,
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Container(
+        padding: const EdgeInsets.all(12.0),
+        decoration: BoxDecoration(
+          color: theme.colorScheme.surface,
+          borderRadius: BorderRadius.circular(12.0),
+           boxShadow: const [
+            BoxShadow(
+              color: Color(0xFFE5E9F2),
+              blurRadius: 15,
+              offset: Offset(0, 4),
+              spreadRadius: 0,
+            )
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
               ),
-              for (int i = 1; i < tableData.length; i++)
+            ),
+            const SizedBox(height: 16.0),
+            Text(
+              description,
+              style: const TextStyle(
+                fontSize: 16.0,
+              ),
+            ),
+            const SizedBox(height: 16.0),
+            Table(
+              border: TableBorder.all(color: Colors.white),
+              children: [
                 _buildTableRow(
-                  tableData[i],
-                  theme.colorScheme.primary,
-                  true,
+                  tableData[0],
+                  theme.colorScheme.onPrimaryContainer,
+                  false,
                   theme,
                   scaffoldContext,
                 ),
-            ],
-          ),
-          const SizedBox(height: 16.0),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Commentaires',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(8.0),
-                child: const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Ajouter un commentaire',
+                for (int i = 1; i < tableData.length; i++)
+                  _buildTableRow(
+                    tableData[i],
+                    theme.colorScheme.primary,
+                    true,
+                    theme,
+                    scaffoldContext,
+                  ),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Commentaires',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+                Container(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Ajouter un commentaire',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
