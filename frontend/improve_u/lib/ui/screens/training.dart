@@ -5,10 +5,16 @@ import 'package:improve_u/ui/widgets/section_defi_sport.dart';
 import 'package:improve_u/ui/Sport/widgets/section_statistique_sport.dart';
 import 'package:improve_u/ui/Sport/widgets/section_information_exercice.dart';
 import 'package:improve_u/ui/Sport/widgets/section_repos.dart';
+import 'package:improve_u/ui/Sport/widgets/boutton_seances.dart';
 
-class TrainingPage extends StatelessWidget {
+class TrainingPage extends StatefulWidget {
   const TrainingPage({Key? key});
 
+  @override
+  State<TrainingPage> createState() => _TrainingPageState();
+}
+
+class _TrainingPageState extends State<TrainingPage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
@@ -35,9 +41,7 @@ class TrainingPage extends StatelessWidget {
             SizedBox(height: 24.0),
             SectionRepos(),
             SizedBox(height: 8.0),
-
           ],
-
         ),
       ),
       bottomNavigationBar: CustomBottomAppBar(),

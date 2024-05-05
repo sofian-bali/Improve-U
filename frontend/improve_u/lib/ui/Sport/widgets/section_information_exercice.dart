@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class SectionInformationExercice extends StatelessWidget {
   final String title;
   final String description;
