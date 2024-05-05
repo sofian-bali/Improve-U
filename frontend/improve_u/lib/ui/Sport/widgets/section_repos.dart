@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class SectionRepos extends StatelessWidget {
+
+class SectionRepos extends StatefulWidget {
   const SectionRepos({super.key});
 
+  @override
+  State<SectionRepos> createState() => _SectionReposState();
+}
+
+class _SectionReposState extends State<SectionRepos> {
   @override
   Widget build(BuildContext context) {
     return Padding(
