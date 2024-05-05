@@ -1,7 +1,10 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 class SectionDefiSport extends StatelessWidget {
   final String points;
+
   final String info_defi_seances;
 
   const SectionDefiSport({

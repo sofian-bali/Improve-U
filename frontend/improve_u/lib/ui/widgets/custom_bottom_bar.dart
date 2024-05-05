@@ -11,6 +11,7 @@ class CustomBottomAppBar extends StatefulWidget {
   const CustomBottomAppBar({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CustomBottomAppBarState createState() {
     return _CustomBottomAppBarState();
   }

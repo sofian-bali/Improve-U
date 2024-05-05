@@ -5,10 +5,10 @@ class BouttonSeances extends StatefulWidget {
   final VoidCallback onPressed;
 
   const BouttonSeances({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   State<BouttonSeances> createState() => _BouttonSeancesState();
