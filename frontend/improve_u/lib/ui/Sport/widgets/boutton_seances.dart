@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
+
 class BouttonSeances extends StatefulWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   const BouttonSeances({
     super.key,
     required this.text,
-    required this.onPressed,
+    this.onPressed,
   });
 
   @override
@@ -18,11 +19,14 @@ class _BouttonSeancesState extends State<BouttonSeances> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Theme.of(context).colorScheme.background,
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+          return Theme.of(context).colorScheme.primary; 
+        }),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
       ),
       onPressed: widget.onPressed,
@@ -32,6 +36,9 @@ class _BouttonSeancesState extends State<BouttonSeances> {
           fontSize: 16,
           fontWeight: FontWeight.bold,
           color: Colors.white,
+
+
+
         ),
       ),
     );
