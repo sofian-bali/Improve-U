@@ -6,6 +6,8 @@ import 'package:improve_u/ui/Sport/widgets/section_statistique_sport.dart';
 import 'package:improve_u/ui/Sport/widgets/section_information_exercice.dart';
 import 'package:improve_u/ui/Sport/widgets/section_repos.dart';
 import 'package:improve_u/ui/Sport/widgets/section_stats_cercles.dart';
+import 'package:improve_u/ui/Sport/widgets/boutton_seances.dart';
+
 
 class TrainingPage extends StatefulWidget {
   const TrainingPage({super.key});
@@ -25,13 +27,47 @@ class _TrainingPageState extends State<TrainingPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SectionDefiSport(
-              points: '2000',
-              info_defi_seances: 'Faire 10 pompes en moins d’une minutes',
+              defis: [
+                DefiData(
+                  points: '10',
+                  info: 'Développé couché : 3 séries de 10 répétitions',
+                  textButton: 'Commencer',
+                  onPressed: null,
+                
+                ),
+                DefiData(
+                  points: '15',
+                  info: 'Squat : 3 séries de 10 répétitions',
+                  textButton: 'Commencer',
+                  onPressed: null,
+                ),
+                DefiData(
+                  points: '20',
+                  info: 'Soulevé de terre : 3 séries de 10 répétitions',
+                  textButton: 'Commencer',
+                  onPressed: null,
+                ),
+              ],
             ),
             const SizedBox(height: 24.0),
-            const SectionStatistiqueSport(
-              statisticNumber: '12',
-              statisticDescription: 'Faire 10 pompes en moins d’une minute',
+            SectionStatistiqueSport(
+              statistics: [
+                StatisticData(
+                  statisticNumber: '92',
+                  statisticDescription: 'Séances réalisées depuis la création du compte',
+                ),
+                StatisticData(
+                  statisticNumber: '492',
+                  statisticDescription: ' Kilos au total sur les exercices de squat, développé couché, et soulevé de terre',
+                ),
+                StatisticData(
+                  statisticNumber: '328',
+                  statisticDescription: 'Jours à prendre soin de ta santé',
+                ),
+                StatisticData(
+                  statisticNumber: '12', 
+                  statisticDescription: 'statisticDescription')
+              ],
             ),
             const SizedBox(height: 24.0),
             const SectionInformationExercice(
@@ -47,6 +83,14 @@ class _TrainingPageState extends State<TrainingPage> {
             ),
             const SizedBox(height: 24.0),
             const SectionRepos(),
+            const Center(
+              child: 
+                BouttonSeances(
+                  text: 'Aujourd\'hui c\'est Repos !',
+                  onPressed: null,
+                ),
+            ),
+            
             const SizedBox(height: 8.0),
             SportProgressCard(
               title: 'Objectif Sportif',
@@ -59,6 +103,16 @@ class _TrainingPageState extends State<TrainingPage> {
                   title: 'Squat',
                   progress: 0.5,
                   progressText: '63/286',
+                ),
+                LinearProgressData(
+                  title: 'Soulever de Terre',
+                  progress: 0.8,
+                  progressText: '120/150',
+                ),
+                LinearProgressData(
+                  title: 'Soulever de Terre',
+                  progress: 0.8,
+                  progressText: '120/150',
                 ),
                 LinearProgressData(
                   title: 'Soulever de Terre',

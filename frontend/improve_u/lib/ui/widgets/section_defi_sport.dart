@@ -1,16 +1,25 @@
-// ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
 
-class SectionDefiSport extends StatelessWidget {
+class DefiData {
   final String points;
+  final String info;
+  final String textButton;
+  final VoidCallback? onPressed;
 
-  final String info_defi_seances;
+  const DefiData({
+    required this.points,
+    required this.info,
+    required this.textButton,
+    this.onPressed,
+  });
+}
+
+class SectionDefiSport extends StatelessWidget {
+  final List<DefiData> defis;
 
   const SectionDefiSport({
     super.key,
-    required this.points,
-    required this.info_defi_seances,
+    required this.defis,
   });
 
   @override
@@ -18,8 +27,7 @@ class SectionDefiSport extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
-        width: 400,
-        height: 253,
+        width: double.infinity,
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: const Color(0xFFF0F5FF),
@@ -34,150 +42,122 @@ class SectionDefiSport extends StatelessWidget {
           ],
         ),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              width: double.infinity,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Séances du jour',
-                    style: TextStyle(
-                      color: Color(0xFF242D41),
-                      fontSize: 22,
-                      fontFamily: 'DM Sans',
-                      fontWeight: FontWeight.w500,
-                      height: 0,
-                    ),
-                  ),
-                ],
+            const Text(
+              'Séances du jour',
+              style: TextStyle(
+                color: Color(0xFF242D41),
+                fontSize: 22,
+                fontFamily: 'DM Sans',
+                fontWeight: FontWeight.w500,
               ),
             ),
             const SizedBox(height: 16),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: double.infinity,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: 210,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                width: double.infinity,
-                                child: Text(
-                                  '$points points',
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: defis.length,
+              itemBuilder: (context, index) {
+                final defi = defis[index];
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 16),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child:Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '${defi.points} Points',
                                   style: const TextStyle(
                                     color: Color(0xFF9CA3AF),
                                     fontSize: 12,
                                     fontStyle: FontStyle.italic,
                                     fontFamily: 'DM Sans',
                                     fontWeight: FontWeight.w400,
-                                    height: 0,
                                   ),
                                 ),
-                              ),
-                              const SizedBox(height: 4),
-                              SizedBox(
-                                width: double.infinity,
-                                child: Text(
-                                  info_defi_seances,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
+                                const SizedBox(height: 4),
+                                Text(
+                                  defi.info,
                                   style: const TextStyle(
                                     color: Color(0xFF09090B),
                                     fontSize: 20,
                                     fontFamily: 'DM Sans',
                                     fontWeight: FontWeight.w500,
-                                    height: 0,
                                   ),
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                          clipBehavior: Clip.antiAlias,
-                          decoration: ShapeDecoration(
-                            color: const Color(0xFFF0F5FF),
-                            shape: RoundedRectangleBorder(
-                              side: const BorderSide(width: 1, color: Color(0xFFACBFE5)),
-                              borderRadius: BorderRadius.circular(16),
+                              ],
                             ),
                           ),
-                          child: const Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Sport',
-                                style: TextStyle(
-                                  color: Color(0xFF6C83B2),
-                                  fontSize: 14,
-                                  fontFamily: 'DM Sans',
-                                  fontWeight: FontWeight.w500,
-                                  height: 0,
-                                ),
+                          const SizedBox(width: 10),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF0F5FF),
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: const Color(0xFFACBFE5), width: 1),
+                            ),
+                            child: const Text(
+                              'Sport',
+                              style: TextStyle(
+                                color: Color(0xFF6C83B2),
+                                fontSize: 14,
+                                fontFamily: 'DM Sans',
+                                fontWeight: FontWeight.w500,
                               ),
-                            ],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 16),
+                      ElevatedButton(
+                      onPressed: defi.onPressed,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) {
+                          return Theme.of(context).colorScheme.primary; 
+                        }),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 24),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: ShapeDecoration(
-                      color: const Color(0xFF8AA8E5),
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(width: 1, color: Color(0xFF8AA8E5)),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: const TextButton(
-                      onPressed: null,
-                      child: Text(
-                        'Faire la séance',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontFamily: 'DM Sans',
-                          fontWeight: FontWeight.w500,
+                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                          const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
                         ),
                       ),
-                    ),
+                      child:  Text(
+                        defi.textButton,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+
+                        ),
+                      ),
+                      )
+                    ],
+                    
                   ),
-                ],
-              ),
+
+                );
+
+              },
             ),
           ],
+
         ),
       ),
     );
