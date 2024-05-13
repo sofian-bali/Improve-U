@@ -20,19 +20,17 @@ class NutritionPage extends StatelessWidget {
               children: [
                 Text(
                   'Nutrition',
-                  style: Theme.of(context)
-                      .textTheme
-                      .displayLarge
-                      ?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
+                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onPrimary),
                 ),
               ],
             ),
-        
+
             // Espacement
             const SizedBox(
               height: 32,
             ),
-        
+
             /// Affichage de la progression
             const NutritionProgressCard(),
           ],

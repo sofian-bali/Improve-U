@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class CustomColors {
   static const Color neutreGris0 = Color(0xFFFFFFFF);
-  static const Color neutreGris50 = Color(0xFFFAFAFA);
-  static const Color neutreGris100 = Color(0xFFD1D5DB);
-  static const Color neutreGris300 = Color(0xFF9CA3AF);
-  static const Color neutreGris500 = Color(0xFF4B5563);
-  static const Color neutreGris700 = Color(0xFF374151);
-  static const Color neutreGris900 = Color(0xFF09090B);
+  static const Color neutreGris50 = Color(0xFFF6F7FB);
+  static const Color neutreGris100 = Color(0xFFE8E9ED);
+  static const Color neutreGris300 = Color(0xFFD5D6DD);
+  static const Color neutreGris500 = Color(0xFF9DA0AF);
+  static const Color neutreGris700 = Color(0xFF525566);
+  static const Color neutreGris900 = Color(0xFF0D0D0D);
 
   static const Color primaireBleu50 = Color(0xFFF0F5FF);
   static const Color primaireBleu300 = Color(0xFFACBFE5);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -49,7 +49,7 @@ class NutritionProgressCard extends StatelessWidget {
               child: CircularPercentIndicator(
                 radius: 90.0,
                 lineWidth: 17.0,
-                percent: .75,
+                percent: .77,
                 animation: true,
                 animationDuration: 1000,
                 circularStrokeCap: CircularStrokeCap.round,
@@ -57,7 +57,7 @@ class NutritionProgressCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      '75%',
+                      '77%',
                       style: Theme.of(context).textTheme.displayMedium,
                     ),
                     Text(
@@ -77,37 +77,34 @@ class NutritionProgressCard extends StatelessWidget {
               height: 16,
             ),
 
-            /// Macronutriments progression
-            SizedBox(
-              width: double.infinity,
-              child: Column(
-                children: [
-                  /// Nom du macronutriment
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [Text('Glucides'), Text('63/286')],
-                  ),
+            /// Glucides
+            const CustomProgressBar(
+              name: 'Glucides',
+              value: 278,
+              valueTotal: 390,
+            ),
 
-                  /// Gap
-                  const SizedBox(
-                    height: 4,
-                  ),
+            const SizedBox(
+              height: 8,
+            ),
 
-                  /// Barre de progression
-                  LinearPercentIndicator(
-                    padding: EdgeInsets.zero,
-                    lineHeight: 10.0,
-                    percent: .5,
-                    backgroundColor:
-                        Theme.of(context).colorScheme.secondaryContainer,
-                    progressColor: Theme.of(context).colorScheme.secondary,
-                    animation: true,
-                    animationDuration: 500,
-                    barRadius: const Radius.circular(8),
-                  ),
-                ],
-              ),
-            )
+            /// Protéines
+            const CustomProgressBar(
+              name: 'Protéines',
+              value: 63,
+              valueTotal: 124,
+            ),
+
+            const SizedBox(
+              height: 8,
+            ),
+
+            /// Lipides
+            const CustomProgressBar(
+              name: 'Lipides',
+              value: 23,
+              valueTotal: 82,
+            ),
           ],
         ),
       ),
