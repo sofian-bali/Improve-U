@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:improve_u/ui/widgets/custom_app_bar.dart';
-import 'package:improve_u/ui/widgets/custom_bottom_bar.dart';
+import 'package:improve_u/ui/widgets/custom_bottom_app_bar.dart';
 
 
 
