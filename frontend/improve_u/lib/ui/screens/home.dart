@@ -1,21 +1,74 @@
-// ignore_for_file: deprecated_member_use, unused_import
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:improve_u/router.dart';
-import 'package:improve_u/main.dart';
+import 'package:improve_u/ui/views/defi_view.dart';
+import 'package:improve_u/ui/views/nutrition_view.dart';
+import 'package:improve_u/ui/views/health_view.dart';
+import 'package:improve_u/ui/views/training_view.dart';
 import 'package:improve_u/ui/widgets/custom_app_bar.dart';
-import 'package:improve_u/ui/widgets/section_defi.dart';
-import 'package:improve_u/ui/widgets/custom_bottom_app_bar.dart';
-import 'package:improve_u/theme/main_theme.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  static const List<Widget> _viewsOptions = <Widget>[
+    TrainingView(),
+    NutritionView(),
+    HealthView(),
+    DefiView(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        appBar: CustomAppBar(title: 'Improve-U'),
-        body: SectionDefi(),
-        bottomNavigationBar: CustomBottomAppBar());
+    return Scaffold(
+      appBar: const CustomAppBar(title: 'Improve-U'),
+      body: _viewsOptions.elementAt(_selectedIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.fire,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+            label: 'Training',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.utensils,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+            label: 'Nutrition',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.heartPulse,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+            label: 'Santé',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.flagCheckered,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+            label: 'Défi',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        selectedItemColor: Theme.of(context).colorScheme.primary,
+      ),
+    );
   }
 }

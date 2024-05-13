@@ -71,6 +71,7 @@ ThemeData lightMode = ThemeData(
     onSurface: CustomColors.neutreGris700,
     surfaceVariant: CustomColors.neutreGris100,
     onSurfaceVariant: CustomColors.neutreGris300,
+    outline: CustomColors.neutreGris500,
   ),
   textTheme: const TextTheme(
     displayLarge: TextStyle(
@@ -125,7 +126,8 @@ ThemeData darkMode = ThemeData(
     surface: CustomColors.neutreGris700,
     onSurface: CustomColors.neutreGris50,
     surfaceVariant: CustomColors.neutreGris300,
-    onSurfaceVariant: CustomColors.neutreGris100,
+    onSurfaceVariant: CustomColors.neutreGris700,
+    outline: CustomColors.neutreGris500,
   ),
   textTheme: const TextTheme(
     displayLarge: TextStyle(
