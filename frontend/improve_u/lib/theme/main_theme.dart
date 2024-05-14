@@ -74,31 +74,23 @@ ThemeData lightMode = ThemeData(
     outline: CustomColors.neutreGris500,
   ),
   textTheme: const TextTheme(
-    displayLarge: TextStyle(
-        fontSize: 34.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    displayMedium: TextStyle(
-        fontSize: 28.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    displaySmall: TextStyle(
-        fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    headlineLarge: TextStyle(
-        fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    headlineMedium: TextStyle(
-        fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    displayLarge:
+        TextStyle(fontSize: 34.0, fontFamily: 'Acier', letterSpacing: 1),
+    displayMedium: TextStyle(fontSize: 28.0, fontFamily: 'DM sans'),
+    displaySmall: TextStyle(fontSize: 22.0, fontFamily: 'DM sans'),
+    headlineLarge: TextStyle(fontSize: 20.0, fontFamily: 'DM sans'),
+    headlineMedium: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
     headlineSmall: TextStyle(
         fontSize: 15.0,
         fontWeight: FontWeight.normal,
         fontFamily: 'DM sans'), // Ajout de headline6
-    labelLarge: TextStyle(
-        fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    labelLarge: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
     bodyLarge: TextStyle(
         fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     bodyMedium: TextStyle(
         fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     bodySmall: TextStyle(
-        fontSize: 12.0,
-        fontWeight: FontWeight.normal,
-        fontFamily: 'DM sans',
-        fontStyle: FontStyle.italic),
+        fontSize: 12.0, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
   ),
 );
 
@@ -130,28 +122,19 @@ ThemeData darkMode = ThemeData(
     outline: CustomColors.neutreGris500,
   ),
   textTheme: const TextTheme(
-    displayLarge: TextStyle(
-        fontSize: 34.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    displayMedium: TextStyle(
-        fontSize: 28.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    displaySmall: TextStyle(
-        fontSize: 22.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    headlineLarge: TextStyle(
-        fontSize: 20.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    headlineMedium: TextStyle(
-        fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    headlineSmall: TextStyle(
-        fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
-    labelLarge: TextStyle(
-        fontSize: 17.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
+    displayLarge:
+        TextStyle(fontSize: 34.0, fontFamily: 'Acier', letterSpacing: 1),
+    displayMedium: TextStyle(fontSize: 28.0, fontFamily: 'DM sans'),
+    displaySmall: TextStyle(fontSize: 22.0, fontFamily: 'DM sans'),
+    headlineLarge: TextStyle(fontSize: 20.0, fontFamily: 'DM sans'),
+    headlineMedium: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
+    headlineSmall: TextStyle(fontSize: 15.0, fontFamily: 'DM sans'),
+    labelLarge: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
     bodyLarge: TextStyle(
         fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     bodyMedium: TextStyle(
         fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     bodySmall: TextStyle(
-        fontSize: 12.0,
-        fontWeight: FontWeight.normal,
-        fontFamily: 'DM sans',
-        fontStyle: FontStyle.italic),
+        fontSize: 12.0, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
   ),
 );

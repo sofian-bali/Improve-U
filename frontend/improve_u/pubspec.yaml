@@ -3,7 +3,7 @@ name: improve_u
 description: "Improve- est une application tout-en-un qui simplifie la vie des amateurs de sport et de santé. Suivez vos habitudes sportives, alimentaires et de santé tout en bénéficiant de conseils personnalisés et d'une approche écoresponsable. Avec une interface conviviale, Improve-U vous aide à atteindre vos objectifs de manière motivante et pratique."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -20,7 +20,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -37,8 +37,6 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   percent_indicator: ^4.2.3
 
-    
-  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -74,7 +72,6 @@ flutter_launcher_icons:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -83,6 +80,9 @@ flutter:
     - family: DM sans
       fonts:
         - asset: fonts/DMsans-Regular.ttf
+    - family: Acier
+      fonts:
+        - asset: fonts/aciertext-solid.otf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

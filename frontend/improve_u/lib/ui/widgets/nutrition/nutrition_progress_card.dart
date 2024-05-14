@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class NutritionProgressCard extends StatelessWidget {
   const NutritionProgressCard({super.key});
@@ -16,11 +15,11 @@ class NutritionProgressCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
-        shadows: const [
+        shadows: [
           BoxShadow(
-            color: Color(0xFFE2F2DA),
+            color: Theme.of(context).colorScheme.secondaryContainer,
             blurRadius: 15,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
             spreadRadius: 0,
           )
         ],
