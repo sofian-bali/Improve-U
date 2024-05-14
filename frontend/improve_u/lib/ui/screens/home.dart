@@ -39,28 +39,28 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.fire,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             label: 'Training',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.utensils,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             label: 'Nutrition',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.heartPulse,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             label: 'Santé',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.flagCheckered,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             label: 'Défi',
           ),
