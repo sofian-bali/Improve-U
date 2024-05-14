@@ -6,7 +6,7 @@ class SportProgressCard extends StatelessWidget {
   final String title;
   final double objectifPercent;
   final String objectifFinal;
-  final String circularText; // Nouveau texte pour le CircularPercentIndicator
+  final String circularText; 
   final String circularExercice;
   final List<LinearProgressData> linearProgressData;
 
@@ -114,7 +114,7 @@ class LinearProgressData {
   LinearProgressData({
     required this.title,
     required this.progress,
-    required this.progressText,
+    required this.progressText, required double percent,
   });
 }
 
