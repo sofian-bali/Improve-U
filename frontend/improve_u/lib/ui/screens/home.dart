@@ -32,35 +32,35 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Improve-U'),
+      appBar: const CustomAppBar(),
       body: _viewsOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.fire,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             label: 'Training',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.utensils,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             label: 'Nutrition',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.heartPulse,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             label: 'Santé',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
               FontAwesomeIcons.flagCheckered,
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             label: 'Défi',
           ),
