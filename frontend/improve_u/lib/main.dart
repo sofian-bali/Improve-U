@@ -8,7 +8,7 @@ import 'package:improve_u/ui/views/training_view.dart';
 
 void main() {
   runApp(const MyApp());
-}
+}  
  
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

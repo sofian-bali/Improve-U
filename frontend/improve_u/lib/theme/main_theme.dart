@@ -80,10 +80,7 @@ ThemeData lightMode = ThemeData(
     displaySmall: TextStyle(fontSize: 22.0, fontFamily: 'DM sans'),
     headlineLarge: TextStyle(fontSize: 20.0, fontFamily: 'DM sans'),
     headlineMedium: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
-    headlineSmall: TextStyle(
-        fontSize: 15.0,
-        fontWeight: FontWeight.normal,
-        fontFamily: 'DM sans'), // Ajout de headline6
+    headlineSmall: TextStyle(fontSize: 15.0, fontFamily: 'DM sans'),
     labelLarge: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
     bodyLarge: TextStyle(
         fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:improve_u/ui/widgets/custom_navigation.dart';
+import 'package:improve_u/ui/widgets/custom_navbar.dart';
 import 'package:improve_u/ui/widgets/nutrition/nutrition_progress_card.dart';
 
 class NutritionView extends StatelessWidget {
@@ -10,7 +10,7 @@ class NutritionView extends StatelessWidget {
     return Column(
       children: [
         /// Navigation
-        const CustomNavigation(),
+        const CustomNavbar(),
 
         Padding(
           padding: const EdgeInsets.all(12.0),
