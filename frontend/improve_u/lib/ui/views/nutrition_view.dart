@@ -1,38 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:improve_u/ui/widgets/nutrition/nutrition_progress_card.dart';
+import 'package:improve_u/ui/views/nutrition_view_courses.dart';
+import 'package:improve_u/ui/views/nutrition_view_nutrition.dart';
+import 'package:improve_u/ui/views/nutrition_view_recettes.dart';
+import 'package:improve_u/ui/widgets/custom_navbar.dart';
 
-class NutritionView extends StatelessWidget {
+class NutritionView extends StatefulWidget {
   const NutritionView({super.key});
 
   @override
+  State<NutritionView> createState() => _NutritionViewState();
+}
+
+class _NutritionViewState extends State<NutritionView> {
+  int selectedNavbarIndex = 1;
+
+  void _onNavbarItemSelected(int index) {
+    setState(() {
+      selectedNavbarIndex = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: Column(
-        children: <Widget>[
-          /// Titre
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Nutrition',
-                style: Theme.of(context)
-                    .textTheme
-                    .displayLarge
-                    ?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
-              ),
-            ],
-          ),
+    return Column(
+      children: [
+        /// Navigation
+        CustomNavbar(
+          onItemSelected: _onNavbarItemSelected,
+          firstItemTitle: 'Courses',
+          secondItemTitle: 'Nutrition',
+          thirdItemTitle: 'Recettes',
+        ),
 
-          // Espacement
-          const SizedBox(
-            height: 32,
-          ),
-
-          /// Affichage de la progression
-          const NutritionProgressCard(),
-        ],
-      ),
+        /// Affichage de la page
+        if (selectedNavbarIndex == 0) const NutritionViewCourses(),
+        if (selectedNavbarIndex == 1) const NutritionViewNutrition(),
+        if (selectedNavbarIndex == 2) const NutritionViewRecettes()
+      ],
     );
   }
 }
