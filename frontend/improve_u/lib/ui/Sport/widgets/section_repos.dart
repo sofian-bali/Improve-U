@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class SectionRepos extends StatefulWidget {
@@ -30,7 +31,6 @@ class _SectionReposState extends State<SectionRepos> {
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
-            
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
@@ -49,8 +49,8 @@ class _SectionReposState extends State<SectionRepos> {
                 ),
               ),
               const SizedBox(height: 16.0,),
-              Image.asset(
-                'chemin_vers_votre_image',
+              SvgPicture.asset(
+                'assets/logo/logo_horizontal_black.svg',
                 width: 200,
                 height: 200,
               ),
