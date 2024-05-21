@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:improve_u/ui/views/nutrition_view_courses.dart';
-import 'package:improve_u/ui/views/nutrition_view_nutrition.dart';
-import 'package:improve_u/ui/views/nutrition_view_recettes.dart';
+import 'package:improve_u/ui/views/nutrition/nutrition_view_courses.dart';
+import 'package:improve_u/ui/views/nutrition/nutrition_view_nutrition.dart';
+import 'package:improve_u/ui/views/nutrition/nutrition_view_recettes.dart';
 import 'package:improve_u/ui/widgets/custom_navbar.dart';
 
 class NutritionView extends StatefulWidget {
