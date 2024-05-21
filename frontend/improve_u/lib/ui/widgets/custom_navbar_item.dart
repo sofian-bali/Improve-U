@@ -9,31 +9,29 @@ class CustomNavbarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-        decoration: ShapeDecoration(
-          color: selected
-              ? Theme.of(context).colorScheme.surface
-              : Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(6),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+      decoration: ShapeDecoration(
+        color: selected
+            ? Theme.of(context).colorScheme.surface
+            : Colors.transparent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(6),
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: selected
+                      ? Theme.of(context).colorScheme.onBackground
+                      : Theme.of(context).colorScheme.surface,
+                ),
           ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: selected
-                        ? Theme.of(context).colorScheme.onBackground
-                        : Theme.of(context).colorScheme.surface,
-                  ),
-            ),
-          ],
-        ),
+        ],
       ),
     );
   }

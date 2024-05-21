@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:improve_u/ui/widgets/custom_navbar_item.dart';
 
-class CustomNavbar extends StatelessWidget {
-  const CustomNavbar({super.key});
+class CustomNavbar extends StatefulWidget {
+  final ValueChanged<int> onItemSelected;
+  const CustomNavbar({super.key, required this.onItemSelected});
+
+  @override
+  State<CustomNavbar> createState() => _CustomNavbarState();
+}
+
+class _CustomNavbarState extends State<CustomNavbar> {
+  int selectedIndex = 1; // Index par défaut
+
+  void _onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+      widget.onItemSelected(index);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,21 +37,36 @@ class CustomNavbar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            child: const Row(
+            child: Row(
               children: [
-                CustomNavbarItem(
-                  title: 'Courses',
-                  selected: false,
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () => _onItemTapped(0),
+                    child: CustomNavbarItem(
+                      title: 'Courses',
+                      selected: selectedIndex == 0,
+                    ),
+                  ),
                 ),
-                SizedBox(width: 4),
-                CustomNavbarItem(
-                  title: 'Nutrition',
-                  selected: true,
+                const SizedBox(width: 4),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () => _onItemTapped(1),
+                    child: CustomNavbarItem(
+                      title: 'Nutrition',
+                      selected: selectedIndex == 1,
+                    ),
+                  ),
                 ),
-                SizedBox(width: 4),
-                CustomNavbarItem(
-                  title: 'Recettes',
-                  selected: false,
+                const SizedBox(width: 4),
+                Expanded(
+                  child: GestureDetector(
+                    onTap: () => _onItemTapped(2),
+                    child: CustomNavbarItem(
+                      title: 'Recettes',
+                      selected: selectedIndex == 2,
+                    ),
+                  ),
                 ),
               ],
             ),
