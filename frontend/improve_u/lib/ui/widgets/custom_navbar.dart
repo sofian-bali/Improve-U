@@ -2,8 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:improve_u/ui/widgets/custom_navbar_item.dart';
 
 class CustomNavbar extends StatefulWidget {
+  final String firstItemTitle;
+  final String secondItemTitle;
+  final String thirdItemTitle;
   final ValueChanged<int> onItemSelected;
-  const CustomNavbar({super.key, required this.onItemSelected});
+
+  const CustomNavbar({
+    super.key,
+    required this.onItemSelected,
+    required this.firstItemTitle,
+    required this.secondItemTitle,
+    required this.thirdItemTitle,
+  });
 
   @override
   State<CustomNavbar> createState() => _CustomNavbarState();
@@ -43,7 +53,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
                   child: GestureDetector(
                     onTap: () => _onItemTapped(0),
                     child: CustomNavbarItem(
-                      title: 'Courses',
+                      title: widget.firstItemTitle,
                       selected: selectedIndex == 0,
                     ),
                   ),
@@ -53,7 +63,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
                   child: GestureDetector(
                     onTap: () => _onItemTapped(1),
                     child: CustomNavbarItem(
-                      title: 'Nutrition',
+                      title: widget.secondItemTitle,
                       selected: selectedIndex == 1,
                     ),
                   ),
@@ -63,7 +73,7 @@ class _CustomNavbarState extends State<CustomNavbar> {
                   child: GestureDetector(
                     onTap: () => _onItemTapped(2),
                     child: CustomNavbarItem(
-                      title: 'Recettes',
+                      title: widget.thirdItemTitle,
                       selected: selectedIndex == 2,
                     ),
                   ),

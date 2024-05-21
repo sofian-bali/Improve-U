@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:improve_u/theme/main_theme.dart';
 import 'package:improve_u/ui/views/defi_view.dart';
-import 'package:improve_u/ui/views/health_view.dart';
+import 'package:improve_u/ui/views/sante/sante_view.dart';
 import 'package:improve_u/ui/screens/home.dart';
 import 'package:improve_u/ui/views/nutrition_view.dart';
 import 'package:improve_u/ui/views/training_view.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         '/home': (BuildContext context) => const Home(),
         '/training': (BuildContext context) => const TrainingView(),
         '/nutrition': (BuildContext context) => const NutritionView(),
-        '/health': (BuildContext context) => const HealthView(),
+        '/health': (BuildContext context) => const SanteView(),
         '/defi': (BuildContext context) => const DefiView(),
       },
       debugShowCheckedModeBanner: false,

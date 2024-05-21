@@ -25,7 +25,12 @@ class _NutritionViewState extends State<NutritionView> {
     return Column(
       children: [
         /// Navigation
-        CustomNavbar(onItemSelected: _onNavbarItemSelected),
+        CustomNavbar(
+          onItemSelected: _onNavbarItemSelected,
+          firstItemTitle: 'Courses',
+          secondItemTitle: 'Nutrition',
+          thirdItemTitle: 'Recettes',
+        ),
 
         /// Affichage de la page
         if (selectedNavbarIndex == 0) const NutritionViewCourses(),
