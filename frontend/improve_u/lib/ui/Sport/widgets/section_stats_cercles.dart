@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -24,13 +25,14 @@ class SportProgressCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
         boxShadow: const [
           BoxShadow(
-            color: Color(0xFFE2F2DA),
+            color: Color(0xFF8AA8E5),
             blurRadius: 15,
             offset: Offset(0, 4),
             spreadRadius: 0,
@@ -66,7 +68,7 @@ class SportProgressCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      circularText, // Utiliser le texte désiré ici
+                      circularText, 
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     Text(

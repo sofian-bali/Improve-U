@@ -5,6 +5,7 @@ import 'package:improve_u/ui/Sport/widgets/section_information_exercice.dart';
 import 'package:improve_u/ui/Sport/widgets/section_repos.dart';
 import 'package:improve_u/ui/Sport/widgets/section_stats_cercles.dart';
 import 'package:improve_u/ui/Sport/widgets/boutton_seances.dart';
+import 'package:improve_u/ui/Sport/widgets/section_evolution.dart';
 
 
 class TrainingView extends StatefulWidget {
@@ -117,6 +118,14 @@ class _TrainingViewState extends State<TrainingView> {
                 ),
               ],
             ),
+            const SizedBox(height: 24.0),
+            const SectionEvolution(
+              title: 'Objectifs sportifs',
+              subtitle: 'Développé couché',
+              month: 'Février',
+              weight: 80,
+            )
+
           ],
         ),
     );
