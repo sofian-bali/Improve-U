@@ -4,7 +4,7 @@ import 'package:improve_u/ui/views/defi_view.dart';
 import 'package:improve_u/ui/views/sante/sante_view.dart';
 import 'package:improve_u/ui/screens/home.dart';
 import 'package:improve_u/ui/views/nutrition/nutrition_view.dart';
-import 'package:improve_u/ui/views/training_view.dart';
+import 'package:improve_u/ui/views/training/training_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ void main() {
  
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
