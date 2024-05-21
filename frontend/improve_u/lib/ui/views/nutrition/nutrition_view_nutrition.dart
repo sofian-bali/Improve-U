@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:improve_u/ui/widgets/custom_defi_section.dart';
 import 'package:improve_u/ui/widgets/nutrition/nutrition_progress_card.dart';
 
 class NutritionViewNutrition extends StatelessWidget {
@@ -24,13 +25,56 @@ class NutritionViewNutrition extends StatelessWidget {
             ],
           ),
 
-          // Espacement
+          /// Espacement
           const SizedBox(
             height: 32,
           ),
 
           /// Affichage de la progression
           const NutritionProgressCard(),
+
+          /// Espacement
+          const SizedBox(
+            height: 32,
+          ),
+
+          /// Affichage des défis
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: ShapeDecoration(
+              color: Theme.of(context).colorScheme.secondaryContainer,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                /// Titre de la section
+                Text(
+                  'Défi nutrition de la semaine',
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+
+                /// Espacement
+                const SizedBox(
+                  height: 16,
+                ),
+
+                /// Premier défi
+                const CustomDefiSection(),
+
+                /// Espacement
+                const SizedBox(
+                  height: 16,
+                ),
+
+                /// Deuxième défi
+                const CustomDefiSection(),
+              ],
+            ),
+          )
         ],
       ),
     );

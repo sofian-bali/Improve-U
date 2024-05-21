@@ -22,21 +22,23 @@ class _NutritionViewState extends State<NutritionView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        /// Navigation
-        CustomNavbar(
-          onItemSelected: _onNavbarItemSelected,
-          firstItemTitle: 'Courses',
-          secondItemTitle: 'Nutrition',
-          thirdItemTitle: 'Recettes',
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          /// Navigation
+          CustomNavbar(
+            onItemSelected: _onNavbarItemSelected,
+            firstItemTitle: 'Courses',
+            secondItemTitle: 'Nutrition',
+            thirdItemTitle: 'Recettes',
+          ),
 
-        /// Affichage de la page
-        if (selectedNavbarIndex == 0) const NutritionViewCourses(),
-        if (selectedNavbarIndex == 1) const NutritionViewNutrition(),
-        if (selectedNavbarIndex == 2) const NutritionViewRecettes()
-      ],
+          /// Affichage de la page
+          if (selectedNavbarIndex == 0) const NutritionViewCourses(),
+          if (selectedNavbarIndex == 1) const NutritionViewNutrition(),
+          if (selectedNavbarIndex == 2) const NutritionViewRecettes()
+        ],
+      ),
     );
   }
 }
