@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:improve_u/ui/widgets/custom_defi_section.dart';
 import 'package:improve_u/ui/widgets/custom_meal_card.dart';
 import 'package:improve_u/ui/widgets/nutrition/nutrition_progress_card.dart';
@@ -52,7 +51,7 @@ class NutritionViewNutrition extends StatelessWidget {
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: <Widget>[
                 /// Titre de la section
                 Text(
                   'Défi nutrition de la semaine',
@@ -88,7 +87,7 @@ class NutritionViewNutrition extends StatelessWidget {
             height: 536,
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: const [
+              children: const <Widget>[
                 CustomMealCard(),
                 SizedBox(width: 16),
                 CustomMealCard(),

@@ -24,7 +24,7 @@ class _NutritionViewState extends State<NutritionView> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: [
+        children: <Widget>[
           /// Navigation
           CustomNavbar(
             onItemSelected: _onNavbarItemSelected,

@@ -14,7 +14,7 @@ class CustomMealCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.background,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
+        boxShadow: <BoxShadow>[
           BoxShadow(
             color: Theme.of(context).colorScheme.secondaryContainer,
             blurRadius: 15,
@@ -26,10 +26,10 @@ class CustomMealCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
-          children: [
+          children: <Widget>[
             /// Titre
             Row(
-              children: [
+              children: <Widget>[
                 Text(
                   'Repas',
                   style: Theme.of(context).textTheme.displayMedium,
@@ -46,7 +46,7 @@ class CustomMealCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Stack(
-                children: [
+                children: <Widget>[
                   Image.asset(
                     'assets/spaghetti.png',
                   ),
@@ -70,7 +70,7 @@ class CustomMealCard extends StatelessWidget {
             /// Nom du repas
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
+              children: <Widget>[
                 Text(
                   'Spaghetti Bolognaise',
                   style: Theme.of(context).textTheme.displaySmall,

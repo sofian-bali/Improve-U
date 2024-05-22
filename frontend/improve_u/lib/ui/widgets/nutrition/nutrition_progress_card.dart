@@ -13,7 +13,7 @@ class NutritionProgressCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.background,
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
+        boxShadow: <BoxShadow>[
           BoxShadow(
             color: Theme.of(context).colorScheme.secondaryContainer,
             blurRadius: 15,
@@ -25,10 +25,10 @@ class NutritionProgressCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
-          children: [
+          children: <Widget>[
             /// Titre
             Row(
-              children: [
+              children: <Widget>[
                 Text(
                   'Calories',
                   style: Theme.of(context).textTheme.displayMedium,
@@ -52,7 +52,7 @@ class NutritionProgressCard extends StatelessWidget {
                 circularStrokeCap: CircularStrokeCap.round,
                 center: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: <Widget>[
                     Text(
                       '77%',
                       style: Theme.of(context).textTheme.displayMedium,
