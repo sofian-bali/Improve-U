@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomLabel extends StatelessWidget {
   final String value;
+  final String label;
 
-  const CustomLabel({super.key, required this.value});
+  const CustomLabel({super.key, required this.value, required this.label});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class CustomLabel extends StatelessWidget {
         ),
       ),
       child: Text(
-        value,
+        label,
         style: TextStyle(
           color: accentColor,
         ),

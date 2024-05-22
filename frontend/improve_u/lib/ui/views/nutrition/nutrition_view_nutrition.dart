@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:improve_u/ui/widgets/custom_defi_section.dart';
+import 'package:improve_u/ui/widgets/custom_meal_card.dart';
 import 'package:improve_u/ui/widgets/nutrition/nutrition_progress_card.dart';
 
 class NutritionViewNutrition extends StatelessWidget {
@@ -80,6 +82,21 @@ class NutritionViewNutrition extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
+
+          /// Affichage des repas
+          SizedBox(
+            height: 536,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: const [
+                CustomMealCard(),
+                SizedBox(width: 16),
+                CustomMealCard(),
+                SizedBox(width: 16),
+                CustomMealCard(),
+              ],
+            ),
+          )
         ],
       ),
     );

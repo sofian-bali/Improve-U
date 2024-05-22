@@ -69,7 +69,10 @@ class CustomDefiSection extends StatelessWidget {
               ),
 
               /// Label du défi
-              const CustomLabel(value: 'Nutrition')
+              const CustomLabel(
+                value: 'Nutrition',
+                label: 'Nutrition',
+              )
             ],
           ),
 

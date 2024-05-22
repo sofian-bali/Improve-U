@@ -1,0 +1,133 @@
+import 'package:flutter/material.dart';
+import 'package:improve_u/ui/widgets/custom_button.dart';
+import 'package:improve_u/ui/widgets/custom_label.dart';
+import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
+
+class CustomMealCard extends StatelessWidget {
+  const CustomMealCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 400,
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.background,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.secondaryContainer,
+            blurRadius: 15,
+            offset: const Offset(0, 4),
+            spreadRadius: 0,
+          )
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            /// Titre
+            Row(
+              children: [
+                Text(
+                  'Repas',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+              ],
+            ),
+
+            /// Gap
+            const SizedBox(
+              height: 16,
+            ),
+
+            /// Image de repas
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Stack(
+                children: [
+                  Image.asset(
+                    'assets/spaghetti.png',
+                  ),
+                  const Positioned(
+                    top: 6,
+                    right: 6,
+                    child: CustomLabel(
+                      value: 'Nutrition',
+                      label: 'Déjeuner',
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            /// Gap
+            const SizedBox(
+              height: 16,
+            ),
+
+            /// Nom du repas
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Spaghetti Bolognaise',
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+              ],
+            ),
+
+            /// Gap
+            const SizedBox(
+              height: 16,
+            ),
+
+            /// Glucides
+            const CustomProgressBar(
+              name: 'Glucides',
+              value: 278,
+              valueTotal: 390,
+            ),
+
+            const SizedBox(
+              height: 8,
+            ),
+
+            /// Protéines
+            const CustomProgressBar(
+              name: 'Protéines',
+              value: 63,
+              valueTotal: 124,
+            ),
+
+            const SizedBox(
+              height: 8,
+            ),
+
+            /// Lipides
+            const CustomProgressBar(
+              name: 'Lipides',
+              value: 23,
+              valueTotal: 82,
+            ),
+
+            /// Gap
+            const SizedBox(
+              height: 32,
+            ),
+
+            /// Boutton
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: const CustomButton(
+                value: 'Nutrition',
+                label: 'Voir la recette',
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
