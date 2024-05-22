@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:improve_u/ui/widgets/custom_button.dart';
+import 'package:improve_u/ui/widgets/custom_label.dart';
 
 class CustomDefiSection extends StatelessWidget {
   const CustomDefiSection({super.key});
@@ -10,7 +11,7 @@ class CustomDefiSection extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(12),
       decoration: ShapeDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.background,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
@@ -27,6 +28,7 @@ class CustomDefiSection extends StatelessWidget {
         children: [
           /// Content
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Informations du défi
               Expanded(
@@ -61,19 +63,30 @@ class CustomDefiSection extends StatelessWidget {
                 ),
               ),
 
+              /// Espacement
+              const SizedBox(
+                width: 12,
+              ),
+
               /// Label du défi
-              Expanded(
-                  flex: 1,
-                  child: Container(
-                    color: Colors.pink,
-                  ))
+              const CustomLabel(value: 'Nutrition')
             ],
           ),
 
+          /// Espacement
+          const SizedBox(
+            height: 24,
+          ),
+
           /// Bouton
-          Container(
-            width: double.infinity,
-            color: Colors.lightGreen,
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              CustomButton(
+                value: 'Nutrition',
+                label: 'Faire le défi',
+              ),
+            ],
           )
         ],
       ),

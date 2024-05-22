@@ -74,7 +74,12 @@ class NutritionViewNutrition extends StatelessWidget {
                 const CustomDefiSection(),
               ],
             ),
-          )
+          ),
+
+          /// Espacement
+          const SizedBox(
+            height: 16,
+          ),
         ],
       ),
     );

@@ -10,12 +10,10 @@ class NutritionProgressCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(12),
-      decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        shadows: [
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.background,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
           BoxShadow(
             color: Theme.of(context).colorScheme.secondaryContainer,
             blurRadius: 15,
