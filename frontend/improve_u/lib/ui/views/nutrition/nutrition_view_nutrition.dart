@@ -89,11 +89,17 @@ class NutritionViewNutrition extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: <Widget>[
-                  CustomMealCard(),
+                  CustomMealCard(
+                    showDesc: false,
+                  ),
                   SizedBox(width: 16),
-                  CustomMealCard(),
+                  CustomMealCard(
+                    showDesc: false,
+                  ),
                   SizedBox(width: 16),
-                  CustomMealCard(),
+                  CustomMealCard(
+                    showDesc: false,
+                  ),
                 ],
               ),
             ),

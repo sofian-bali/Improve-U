@@ -5,7 +5,9 @@ import 'package:improve_u/ui/widgets/custom_label.dart';
 import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
 
 class CustomMealCard extends StatelessWidget {
-  const CustomMealCard({super.key});
+  final bool showDesc;
+
+  const CustomMealCard({super.key, required this.showDesc});
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +80,46 @@ class CustomMealCard extends StatelessWidget {
                 ),
               ],
             ),
+
+            /// Gap
+            const SizedBox(
+              height: 16,
+            ),
+
+            if (showDesc)
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        'Description',
+                        style: Theme.of(context).textTheme.displaySmall,
+                      ),
+                    ],
+                  ),
+
+                  /// Gap
+                  const SizedBox(
+                    height: 8,
+                  ),
+
+                  ///Description
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      'Savourez l\'authentique Spaghetti Bolognaise, un classique de la cuisine italienne. Des spaghettis al dente accompagnés d\'une sauce bolognaise riche et savoureuse. Cette recette vous offre un repas délicieux et idéal pour toutes les occasions.',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineSmall
+                          ?.copyWith(
+                            color: Theme.of(context).colorScheme.onBackground,
+                          ),
+                      softWrap: true,
+                    ),
+                  ),
+                ],
+              ),
 
             /// Gap
             const SizedBox(
