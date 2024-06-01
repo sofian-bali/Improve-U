@@ -20,7 +20,7 @@ class CustomNavbar extends StatefulWidget {
 }
 
 class _CustomNavbarState extends State<CustomNavbar> {
-  int selectedIndex = 1; // Index par défaut
+  int selectedIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
