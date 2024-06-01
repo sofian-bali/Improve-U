@@ -83,19 +83,20 @@ class NutritionViewNutrition extends StatelessWidget {
           ),
 
           /// Affichage des repas
-          SizedBox(
-            height: 536,
-            child: ListView(
+          const SizedBox(
+            child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              children: const <Widget>[
-                CustomMealCard(),
-                SizedBox(width: 16),
-                CustomMealCard(),
-                SizedBox(width: 16),
-                CustomMealCard(),
-              ],
+              child: Row(
+                children: <Widget>[
+                  CustomMealCard(),
+                  SizedBox(width: 16),
+                  CustomMealCard(),
+                  SizedBox(width: 16),
+                  CustomMealCard(),
+                ],
+              ),
             ),
-          )
+          ),
         ],
       ),
     );

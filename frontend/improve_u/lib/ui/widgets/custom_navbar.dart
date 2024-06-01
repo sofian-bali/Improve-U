@@ -38,48 +38,46 @@ class _CustomNavbarState extends State<CustomNavbar> {
           vertical: 12,
           horizontal: 14,
         ),
-        child: Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(4),
-            decoration: ShapeDecoration(
-              color: Theme.of(context).colorScheme.onSurface,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          decoration: ShapeDecoration(
+            color: Theme.of(context).colorScheme.onSurface,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: GestureDetector(
+                  onTap: () => _onItemTapped(0),
+                  child: CustomNavbarItem(
+                    title: widget.firstItemTitle,
+                    selected: selectedIndex == 0,
+                  ),
+                ),
               ),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () => _onItemTapped(0),
-                    child: CustomNavbarItem(
-                      title: widget.firstItemTitle,
-                      selected: selectedIndex == 0,
-                    ),
+              const SizedBox(width: 4),
+              Expanded(
+                child: GestureDetector(
+                  onTap: () => _onItemTapped(1),
+                  child: CustomNavbarItem(
+                    title: widget.secondItemTitle,
+                    selected: selectedIndex == 1,
                   ),
                 ),
-                const SizedBox(width: 4),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () => _onItemTapped(1),
-                    child: CustomNavbarItem(
-                      title: widget.secondItemTitle,
-                      selected: selectedIndex == 1,
-                    ),
+              ),
+              const SizedBox(width: 4),
+              Expanded(
+                child: GestureDetector(
+                  onTap: () => _onItemTapped(2),
+                  child: CustomNavbarItem(
+                    title: widget.thirdItemTitle,
+                    selected: selectedIndex == 2,
                   ),
                 ),
-                const SizedBox(width: 4),
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () => _onItemTapped(2),
-                    child: CustomNavbarItem(
-                      title: widget.thirdItemTitle,
-                      selected: selectedIndex == 2,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

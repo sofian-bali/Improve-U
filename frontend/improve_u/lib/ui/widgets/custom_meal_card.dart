@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:improve_u/theme/main_theme.dart';
 import 'package:improve_u/ui/widgets/custom_button.dart';
 import 'package:improve_u/ui/widgets/custom_label.dart';
 import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
@@ -10,13 +11,13 @@ class CustomMealCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 400,
-      padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.symmetric(vertical: 12.0),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.background,
         borderRadius: BorderRadius.circular(12),
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Theme.of(context).colorScheme.secondaryContainer,
+            color: CustomColors.secondaireVert300.withOpacity(.2),
             blurRadius: 15,
             offset: const Offset(0, 4),
             spreadRadius: 0,
