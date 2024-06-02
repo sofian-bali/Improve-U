@@ -3,7 +3,7 @@ import 'package:improve_u/theme/main_theme.dart';
 import 'package:improve_u/ui/views/defi_view.dart';
 import 'package:improve_u/ui/views/sante/sante_view.dart';
 import 'package:improve_u/ui/screens/home.dart';
-import 'package:improve_u/ui/views/nutrition_view.dart';
+import 'package:improve_u/ui/views/nutrition/nutrition_view.dart';
 import 'package:improve_u/ui/views/training/training_view.dart';
 
 void main() {

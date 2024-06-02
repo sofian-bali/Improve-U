@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:improve_u/theme/main_theme.dart';
 import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -10,14 +11,12 @@ class NutritionProgressCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(12),
-      decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        shadows: [
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.background,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Theme.of(context).colorScheme.secondaryContainer,
+            color: CustomColors.secondaireVert300.withOpacity(.2),
             blurRadius: 15,
             offset: const Offset(0, 4),
             spreadRadius: 0,
@@ -27,10 +26,10 @@ class NutritionProgressCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
-          children: [
+          children: <Widget>[
             /// Titre
             Row(
-              children: [
+              children: <Widget>[
                 Text(
                   'Calories',
                   style: Theme.of(context).textTheme.displayMedium,
@@ -54,7 +53,7 @@ class NutritionProgressCard extends StatelessWidget {
                 circularStrokeCap: CircularStrokeCap.round,
                 center: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: <Widget>[
                     Text(
                       '77%',
                       style: Theme.of(context).textTheme.displayMedium,

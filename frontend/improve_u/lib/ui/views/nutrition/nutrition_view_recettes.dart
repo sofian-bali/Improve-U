@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:improve_u/ui/widgets/custom_meal_card.dart';
 
 class NutritionViewRecettes extends StatelessWidget {
   const NutritionViewRecettes({super.key});
@@ -21,6 +22,36 @@ class NutritionViewRecettes extends StatelessWidget {
                     ?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
               ),
             ],
+          ),
+
+          /// Espacement
+          const SizedBox(
+            height: 32,
+          ),
+
+          /// Affichage des repas
+          const CustomMealCard(
+            showDesc: true,
+          ),
+
+          /// Espacement
+          const SizedBox(
+            height: 16,
+          ),
+
+          /// Affichage des repas
+          const CustomMealCard(
+            showDesc: true,
+          ),
+
+          /// Espacement
+          const SizedBox(
+            height: 16,
+          ),
+
+          /// Affichage des repas
+          const CustomMealCard(
+            showDesc: true,
           ),
         ],
       ),

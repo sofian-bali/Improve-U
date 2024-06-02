@@ -74,19 +74,23 @@ ThemeData lightMode = ThemeData(
     outline: CustomColors.neutreGris500,
   ),
   textTheme: const TextTheme(
-    displayLarge: TextStyle(fontSize: 34.0, fontFamily: 'Acier', letterSpacing: 1),
-    displayMedium: TextStyle(fontSize: 28.0, fontFamily: 'DM sans'),
-    displaySmall: TextStyle(fontSize: 22.0, fontFamily: 'DM sans'),
+    displayLarge:
+        TextStyle(fontSize: 34.0, fontFamily: 'Acier', letterSpacing: 1),
+    displayMedium: TextStyle(
+        fontSize: 28.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+    displaySmall: TextStyle(
+        fontSize: 22.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     headlineLarge: TextStyle(fontSize: 20.0, fontFamily: 'DM sans'),
     headlineMedium: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
     headlineSmall: TextStyle(
-        fontSize: 15.0,
-        fontWeight: FontWeight.normal,
-        fontFamily: 'DM sans'), // Ajout de headline6
+        fontSize: 15.0, fontWeight: FontWeight.normal, fontFamily: 'DM sans'),
     labelLarge: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
-    bodyLarge: TextStyle( fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
-    bodyMedium: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
-    bodySmall: TextStyle( fontSize: 12.0, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
+    bodyLarge: TextStyle(
+        fontSize: 17.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+    bodyMedium: TextStyle(
+        fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+    bodySmall: TextStyle(
+        fontSize: 12.0, fontFamily: 'DM sans', fontStyle: FontStyle.italic),
   ),
 );
 
@@ -95,15 +99,15 @@ ThemeData darkMode = ThemeData(
   colorScheme: const ColorScheme.dark(
     primary: CustomColors.primaireBleu500,
     onPrimary: CustomColors.primaireBleu50,
-    primaryContainer: CustomColors.primaireBleu700,
+    primaryContainer: CustomColors.primaireBleu900,
     onPrimaryContainer: CustomColors.primaireBleu300,
     secondary: CustomColors.secondaireVert500,
     onSecondary: CustomColors.secondaireVert50,
-    secondaryContainer: CustomColors.secondaireVert700,
+    secondaryContainer: CustomColors.secondaireVert900,
     onSecondaryContainer: CustomColors.secondaireVert300,
     tertiary: CustomColors.tertiaireRouge500,
     onTertiary: CustomColors.tertiaireRouge50,
-    tertiaryContainer: CustomColors.tertiaireRouge700,
+    tertiaryContainer: CustomColors.tertiaireRouge900,
     onTertiaryContainer: CustomColors.tertiaireRouge300,
     error: CustomColors.erreurErreur500,
     onError: CustomColors.erreurErreur50,
@@ -120,8 +124,10 @@ ThemeData darkMode = ThemeData(
   textTheme: const TextTheme(
     displayLarge:
         TextStyle(fontSize: 34.0, fontFamily: 'Acier', letterSpacing: 1),
-    displayMedium: TextStyle(fontSize: 28.0, fontFamily: 'DM sans'),
-    displaySmall: TextStyle(fontSize: 22.0, fontFamily: 'DM sans'),
+    displayMedium: TextStyle(
+        fontSize: 28.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
+    displaySmall: TextStyle(
+        fontSize: 22.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     headlineLarge: TextStyle(fontSize: 20.0, fontFamily: 'DM sans'),
     headlineMedium: TextStyle(fontSize: 17.0, fontFamily: 'DM sans'),
     headlineSmall: TextStyle(fontSize: 15.0, fontFamily: 'DM sans'),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:improve_u/ui/widgets/custom_course_section.dart';
+import 'package:improve_u/ui/widgets/custom_recettes_section.dart';
 
 class NutritionViewCourses extends StatelessWidget {
   const NutritionViewCourses({super.key});
@@ -22,6 +24,20 @@ class NutritionViewCourses extends StatelessWidget {
               ),
             ],
           ),
+
+          /// Gap
+          const SizedBox(
+            height: 32,
+          ),
+
+          const CustomRecettesSection(),
+
+          /// Gap
+          const SizedBox(
+            height: 16,
+          ),
+
+          const CustomCourseSection(),
         ],
       ),
     );
