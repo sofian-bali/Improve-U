@@ -76,7 +76,8 @@ ThemeData lightMode = ThemeData(
   textTheme: const TextTheme(
     displayLarge:
         TextStyle(fontSize: 34.0, fontFamily: 'Acier', letterSpacing: 1),
-    displayMedium: TextStyle(fontSize: 28.0, fontFamily: 'DM sans'),
+    displayMedium: TextStyle(
+        fontSize: 28.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     displaySmall: TextStyle(
         fontSize: 22.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     headlineLarge: TextStyle(fontSize: 20.0, fontFamily: 'DM sans'),
@@ -123,7 +124,8 @@ ThemeData darkMode = ThemeData(
   textTheme: const TextTheme(
     displayLarge:
         TextStyle(fontSize: 34.0, fontFamily: 'Acier', letterSpacing: 1),
-    displayMedium: TextStyle(fontSize: 28.0, fontFamily: 'DM sans'),
+    displayMedium: TextStyle(
+        fontSize: 28.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     displaySmall: TextStyle(
         fontSize: 22.0, fontWeight: FontWeight.bold, fontFamily: 'DM sans'),
     headlineLarge: TextStyle(fontSize: 20.0, fontFamily: 'DM sans'),
