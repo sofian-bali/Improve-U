@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:improve_u/ui/widgets/custom_course_card.dart';
+import 'package:improve_u/ui/widgets/custom_course_card_glucides.dart';
+import 'package:improve_u/ui/widgets/custom_course_card_legumes.dart';
+import 'package:improve_u/ui/widgets/custom_course_card_prot.dart';
 
 class CustomCourseSection extends StatelessWidget {
   const CustomCourseSection({super.key});
@@ -32,9 +34,24 @@ class CustomCourseSection extends StatelessWidget {
             height: 16,
           ),
 
-          const CustomCourseCard(
-            title: 'Protéines',
+          /// Liste des aliments protéines
+          const CustomCourseCardProt(),
+
+          /// Gap
+          const SizedBox(
+            height: 16,
           ),
+
+          /// Liste des aliments légumes
+          const CustomCourseCardLegumes(),
+
+          /// Gap
+          const SizedBox(
+            height: 16,
+          ),
+
+          /// Liste des aliments glucides
+          const CustomCourseCardGlucides(),
         ],
       ),
     );
