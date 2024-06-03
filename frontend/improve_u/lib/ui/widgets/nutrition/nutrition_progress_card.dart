@@ -32,7 +32,9 @@ class NutritionProgressCard extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Calories',
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.onSecondary,
+                      ),
                 ),
               ],
             ),
