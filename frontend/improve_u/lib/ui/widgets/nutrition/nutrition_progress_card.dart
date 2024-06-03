@@ -32,7 +32,9 @@ class NutritionProgressCard extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Calories',
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                        color: Theme.of(context).colorScheme.onSecondary,
+                      ),
                 ),
               ],
             ),
@@ -80,6 +82,7 @@ class NutritionProgressCard extends StatelessWidget {
               name: 'Glucides',
               value: 278,
               valueTotal: 390,
+              colorValue: 'Nutrition',
             ),
 
             const SizedBox(
@@ -91,6 +94,7 @@ class NutritionProgressCard extends StatelessWidget {
               name: 'Protéines',
               value: 63,
               valueTotal: 124,
+              colorValue: 'Nutrition',
             ),
 
             const SizedBox(
@@ -102,6 +106,7 @@ class NutritionProgressCard extends StatelessWidget {
               name: 'Lipides',
               value: 23,
               valueTotal: 82,
+              colorValue: 'Nutrition',
             ),
           ],
         ),
