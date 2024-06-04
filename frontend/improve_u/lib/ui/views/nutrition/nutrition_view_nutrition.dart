@@ -90,15 +90,67 @@ class NutritionViewNutrition extends StatelessWidget {
               child: Row(
                 children: <Widget>[
                   CustomMealCard(
-                    showDesc: false,
+                    bigCard: false,
+                    name: 'Spaghetti Bolognaise',
+                    image: 'assets/spaghetti.png',
+                    desc:
+                        'Savourez l\'authentique Spaghetti Bolognaise, un classique de la cuisine italienne. Des spaghettis al dente accompagnés d\'une sauce bolognaise riche et savoureuse. Cette recette vous offre un repas délicieux et idéal pour toutes les occasions.',
+                    colorValue: 'Nutrition',
+                    labelText: 'Déjeuner',
+                    caloriesValue: 813,
+                    caloriesValueTotal: 2094,
+                    glucidesValue: 278,
+                    glucidesValueTotal: 390,
+                    proteinesValue: 63,
+                    proteinesValueTotal: 124,
+                    lipidesValue: 23,
+                    lipidesValueTotal: 82,
                   ),
-                  SizedBox(width: 16),
-                  CustomMealCard(
-                    showDesc: false,
+
+                  /// Gap
+                  SizedBox(
+                    width: 16,
                   ),
-                  SizedBox(width: 16),
+
                   CustomMealCard(
-                    showDesc: false,
+                    bigCard: false,
+                    name: 'Spaghetti Bolognaise',
+                    image: 'assets/spaghetti.png',
+                    desc:
+                        'Savourez l\'authentique Spaghetti Bolognaise, un classique de la cuisine italienne. Des spaghettis al dente accompagnés d\'une sauce bolognaise riche et savoureuse. Cette recette vous offre un repas délicieux et idéal pour toutes les occasions.',
+                    colorValue: 'Nutrition',
+                    labelText: 'Déjeuner',
+                    caloriesValue: 813,
+                    caloriesValueTotal: 2094,
+                    glucidesValue: 278,
+                    glucidesValueTotal: 390,
+                    proteinesValue: 63,
+                    proteinesValueTotal: 124,
+                    lipidesValue: 23,
+                    lipidesValueTotal: 82,
+                  ),
+
+                  /// Gap
+                  SizedBox(
+                    width: 16,
+                  ),
+                  
+                  CustomMealCard(
+                    bigCard: false,
+                    name: 'Spaghetti Bolognaise',
+                    image: 'assets/spaghetti.png',
+                    desc:
+                        'Savourez l\'authentique Spaghetti Bolognaise, un classique de la cuisine italienne. Des spaghettis al dente accompagnés d\'une sauce bolognaise riche et savoureuse. Cette recette vous offre un repas délicieux et idéal pour toutes les occasions.',
+                    colorValue: 'Nutrition',
+                    labelText: 'Déjeuner',
+                    caloriesValue: 813,
+                    caloriesValueTotal: 2094,
+                    glucidesValue: 278,
+                    glucidesValueTotal: 390,
+                    proteinesValue: 63,
+                    proteinesValueTotal: 124,
+                    lipidesValue: 23,
+                    lipidesValueTotal: 82,
                   ),
                 ],
               ),
