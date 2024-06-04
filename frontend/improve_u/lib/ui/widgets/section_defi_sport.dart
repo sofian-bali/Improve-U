@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class DefiData {
+
   final String points;
   final String info;
   final String textButton;
   final VoidCallback? onPressed;
 
+
   const DefiData({
+
     required this.points,
     required this.info,
     required this.textButton,
@@ -16,10 +19,12 @@ class DefiData {
 
 class SectionDefiSport extends StatelessWidget {
   final List<DefiData> defis;
+  final String titleDefi;
 
   const SectionDefiSport({
     super.key,
     required this.defis,
+    required this.titleDefi,
   });
 
   @override
@@ -44,9 +49,11 @@ class SectionDefiSport extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Séances du jour',
-              style: TextStyle(
+             Text(
+
+                titleDefi,
+              
+              style: const TextStyle(
                 color: Color(0xFF242D41),
                 fontSize: 22,
                 fontFamily: 'DM Sans',
