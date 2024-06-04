@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:improve_u/ui/widgets/section_defi_sport.dart';
 import 'package:improve_u/ui/widgets/training/section_stats_cercles.dart';
-
+import 'package:improve_u/ui/widgets/training/custom_evolve_training.dart';
 class TrainingViewTraining extends StatelessWidget {
   const TrainingViewTraining({super.key});
 
@@ -62,6 +62,8 @@ class TrainingViewTraining extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 16),
+          const CustomEvolveTraining(),
           const SizedBox(height: 16),
           const SectionDefiSport(
             titleDefi: 'Défi sport de la semaine',
