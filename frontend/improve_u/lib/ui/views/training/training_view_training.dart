@@ -63,7 +63,10 @@ class TrainingViewTraining extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          const CustomEvolveTraining(),
+          const CustomEvolveTraining(
+            title: 'Evolution',
+            subtitle: 'Développé couché',
+          ),
           const SizedBox(height: 16),
           const SectionDefiSport(
             titleDefi: 'Défi sport de la semaine',

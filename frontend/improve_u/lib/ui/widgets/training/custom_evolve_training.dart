@@ -3,7 +3,17 @@ import 'package:improve_u/theme/main_theme.dart';
 import 'package:improve_u/ui/widgets/training/custom_graph_bar_training.dart';
 
 class CustomEvolveTraining extends StatelessWidget {
-  const CustomEvolveTraining({super.key});
+  final String title;
+  final String subtitle;
+
+  const CustomEvolveTraining(
+    {
+    super.key,
+    required this.title,
+    required this.subtitle,
+    }
+  );
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +39,7 @@ class CustomEvolveTraining extends StatelessWidget {
           children: <Widget>[
             /// Titre
             Text(
-              'Évolution',
+              title,
               style: Theme.of(context).textTheme.displayMedium?.copyWith(
                     color: Theme.of(context).colorScheme.primary,
                   ),
@@ -42,7 +52,7 @@ class CustomEvolveTraining extends StatelessWidget {
 
             /// Sous-titre
             Text(
-              'Développé couché',
+              subtitle,
               style: Theme.of(context).textTheme.displaySmall?.copyWith(
                     color: Theme.of(context).colorScheme.outline,
                   ),
