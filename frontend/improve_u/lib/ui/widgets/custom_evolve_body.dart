@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:improve_u/theme/main_theme.dart';
-import 'package:improve_u/ui/widgets/custom_button.dart';
 import 'package:improve_u/ui/widgets/custom_label.dart';
 import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
 
-class CustomMealCard extends StatelessWidget {
-  final bool showDesc;
+class CustomEvolveBody extends StatelessWidget {
+  final String month;
+  final String image;
+  final String poids;
 
-  const CustomMealCard({super.key, required this.showDesc});
+  const CustomEvolveBody(
+      {super.key,
+      required this.month,
+      required this.image,
+      required this.poids});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +39,7 @@ class CustomMealCard extends StatelessWidget {
             Row(
               children: <Widget>[
                 Text(
-                  'Repas',
+                  'Physique',
                   style: Theme.of(context).textTheme.displayMedium,
                 ),
               ],
@@ -51,14 +56,16 @@ class CustomMealCard extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   Image.asset(
-                    'assets/spaghetti.png',
+                    image,
+                    height: 250,
+                    fit: BoxFit.cover,
                   ),
-                  const Positioned(
+                  Positioned(
                     top: 6,
                     right: 6,
                     child: CustomLabel(
-                      value: 'Nutrition',
-                      label: 'Déjeuner',
+                      value: 'Sante',
+                      label: poids,
                     ),
                   ),
                 ],
@@ -75,7 +82,7 @@ class CustomMealCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Spaghetti Bolognaise',
+                  month,
                   style: Theme.of(context).textTheme.displaySmall,
                 ),
               ],
@@ -86,41 +93,6 @@ class CustomMealCard extends StatelessWidget {
               height: 16,
             ),
 
-            if (showDesc)
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Description',
-                        style: Theme.of(context).textTheme.displaySmall,
-                      ),
-                    ],
-                  ),
-
-                  /// Gap
-                  const SizedBox(
-                    height: 8,
-                  ),
-
-                  ///Description
-                  SizedBox(
-                    width: double.infinity,
-                    child: Text(
-                      'Savourez l\'authentique Spaghetti Bolognaise, un classique de la cuisine italienne. Des spaghettis al dente accompagnés d\'une sauce bolognaise riche et savoureuse. Cette recette vous offre un repas délicieux et idéal pour toutes les occasions.',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineSmall
-                          ?.copyWith(
-                            color: Theme.of(context).colorScheme.onBackground,
-                          ),
-                      softWrap: true,
-                    ),
-                  ),
-                ],
-              ),
-
             /// Gap
             const SizedBox(
               height: 16,
@@ -128,10 +100,10 @@ class CustomMealCard extends StatelessWidget {
 
             /// Glucides
             const CustomProgressBar(
-              name: 'Glucides',
-              value: 278,
-              valueTotal: 390,
-              colorValue: 'Nutrition',
+              name: 'Nombre de défis réalisés',
+              value: 12,
+              valueTotal: 12,
+              colorValue: 'Sante',
             ),
 
             const SizedBox(
@@ -140,10 +112,10 @@ class CustomMealCard extends StatelessWidget {
 
             /// Protéines
             const CustomProgressBar(
-              name: 'Protéines',
-              value: 63,
-              valueTotal: 124,
-              colorValue: 'Nutrition',
+              name: 'Nombre de pas / jour',
+              value: 7654,
+              valueTotal: 8391,
+              colorValue: 'Sante',
             ),
 
             const SizedBox(
@@ -152,25 +124,16 @@ class CustomMealCard extends StatelessWidget {
 
             /// Lipides
             const CustomProgressBar(
-              name: 'Lipides',
-              value: 23,
-              valueTotal: 82,
-              colorValue: 'Nutrition',
+              name: 'Poids au développé couché',
+              value: 70,
+              valueTotal: 85,
+              colorValue: 'Sante',
             ),
 
             /// Gap
             const SizedBox(
               height: 32,
             ),
-
-            /// Boutton
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 12),
-              child: const CustomButton(
-                value: 'Nutrition',
-                label: 'Voir la recette',
-              ),
-            )
           ],
         ),
       ),

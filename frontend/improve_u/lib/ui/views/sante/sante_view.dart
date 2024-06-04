@@ -22,21 +22,23 @@ class _SanteViewState extends State<SanteView> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        /// Navigation
-        CustomNavbar(
-          onItemSelected: _onNavbarItemSelected,
-          firstItemTitle: 'Statistiques',
-          secondItemTitle: 'Santé',
-          thirdItemTitle: 'Évolution',
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          /// Navigation
+          CustomNavbar(
+            onItemSelected: _onNavbarItemSelected,
+            firstItemTitle: 'Statistiques',
+            secondItemTitle: 'Santé',
+            thirdItemTitle: 'Évolution',
+          ),
 
-        /// Affichage de la page
-        if (selectedNavbarIndex == 0) const SanteViewStats(),
-        if (selectedNavbarIndex == 1) const SanteViewSante(),
-        if (selectedNavbarIndex == 2) const SanteViewEvolve()
-      ],
+          /// Affichage de la page
+          if (selectedNavbarIndex == 0) const SanteViewStats(),
+          if (selectedNavbarIndex == 1) const SanteViewSante(),
+          if (selectedNavbarIndex == 2) const SanteViewEvolve()
+        ],
+      ),
     );
   }
 }
