@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:improve_u/theme/main_theme.dart';
 import 'package:improve_u/ui/screens/home.dart';
-import 'package:improve_u/ui/views/nutrition/nutrition_view_recettes.dart';
 import 'package:improve_u/ui/widgets/custom_button.dart';
 import 'package:improve_u/ui/widgets/custom_label.dart';
 import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
