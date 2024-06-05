@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:improve_u/theme/main_theme.dart';
 import 'package:improve_u/ui/views/defi_view.dart';
 import 'package:improve_u/ui/views/sante/sante_view.dart';
 import 'package:improve_u/ui/screens/home.dart';
 import 'package:improve_u/ui/views/nutrition/nutrition_view.dart';
 import 'package:improve_u/ui/views/training/training_view.dart';
+import 'package:improve_u/cubit/user_cubit.dart';
+import 'package:improve_u/cubit/macro_cubit.dart';
 
 void main() {
-  runApp(const MyApp());
-}  
- 
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<UserCubit>(
+          create: (context) => UserCubit(),
+        ),
+        BlocProvider<MacroCubit>(
+          create: (context) => MacroCubit(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
+}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

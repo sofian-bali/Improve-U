@@ -1,16 +1,51 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:improve_u/theme/main_theme.dart';
+import 'package:improve_u/ui/screens/home.dart';
+import 'package:improve_u/ui/views/nutrition/nutrition_view_recettes.dart';
 import 'package:improve_u/ui/widgets/custom_button.dart';
 import 'package:improve_u/ui/widgets/custom_label.dart';
 import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
+import 'package:improve_u/cubit/macro_cubit.dart';
+import 'package:improve_u/cubit/macro_state.dart';
 
 class CustomMealCard extends StatelessWidget {
-  final bool showDesc;
+  final bool bigCard;
+  final String name;
+  final String image;
+  final String desc;
+  final String colorValue;
+  final String labelText;
+  final int caloriesValue;
+  final int caloriesValueTotal;
+  final int glucidesValue;
+  final int glucidesValueTotal;
+  final int proteinesValue;
+  final int proteinesValueTotal;
+  final int lipidesValue;
+  final int lipidesValueTotal;
 
-  const CustomMealCard({super.key, required this.showDesc});
+  const CustomMealCard(
+      {super.key,
+      required this.bigCard,
+      required this.name,
+      required this.image,
+      required this.desc,
+      required this.colorValue,
+      required this.labelText,
+      required this.caloriesValue,
+      required this.caloriesValueTotal,
+      required this.glucidesValue,
+      required this.glucidesValueTotal,
+      required this.proteinesValue,
+      required this.proteinesValueTotal,
+      required this.lipidesValue,
+      required this.lipidesValueTotal});
 
   @override
   Widget build(BuildContext context) {
+    MacroCubit macroCubit = BlocProvider.of<MacroCubit>(context);
+
     return Container(
       width: 400,
       margin: const EdgeInsets.symmetric(vertical: 12.0),
@@ -51,14 +86,14 @@ class CustomMealCard extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   Image.asset(
-                    'assets/spaghetti.png',
+                    image,
                   ),
-                  const Positioned(
+                  Positioned(
                     top: 6,
                     right: 6,
                     child: CustomLabel(
-                      value: 'Nutrition',
-                      label: 'Déjeuner',
+                      value: colorValue,
+                      label: labelText,
                     ),
                   ),
                 ],
@@ -75,7 +110,7 @@ class CustomMealCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  'Spaghetti Bolognaise',
+                  name,
                   style: Theme.of(context).textTheme.displaySmall,
                 ),
               ],
@@ -86,7 +121,7 @@ class CustomMealCard extends StatelessWidget {
               height: 16,
             ),
 
-            if (showDesc)
+            if (bigCard)
               Column(
                 children: [
                   Row(
@@ -108,7 +143,7 @@ class CustomMealCard extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: Text(
-                      'Savourez l\'authentique Spaghetti Bolognaise, un classique de la cuisine italienne. Des spaghettis al dente accompagnés d\'une sauce bolognaise riche et savoureuse. Cette recette vous offre un repas délicieux et idéal pour toutes les occasions.',
+                      desc,
                       style: Theme.of(context)
                           .textTheme
                           .headlineSmall
@@ -126,12 +161,24 @@ class CustomMealCard extends StatelessWidget {
               height: 16,
             ),
 
+            /// Calories
+            CustomProgressBar(
+              name: 'Calories',
+              value: caloriesValue,
+              valueTotal: caloriesValueTotal,
+              colorValue: colorValue,
+            ),
+
+            const SizedBox(
+              height: 8,
+            ),
+
             /// Glucides
-            const CustomProgressBar(
+            CustomProgressBar(
               name: 'Glucides',
-              value: 278,
-              valueTotal: 390,
-              colorValue: 'Nutrition',
+              value: glucidesValue,
+              valueTotal: glucidesValueTotal,
+              colorValue: colorValue,
             ),
 
             const SizedBox(
@@ -139,11 +186,11 @@ class CustomMealCard extends StatelessWidget {
             ),
 
             /// Protéines
-            const CustomProgressBar(
+            CustomProgressBar(
               name: 'Protéines',
-              value: 63,
-              valueTotal: 124,
-              colorValue: 'Nutrition',
+              value: proteinesValue,
+              valueTotal: proteinesValueTotal,
+              colorValue: colorValue,
             ),
 
             const SizedBox(
@@ -151,11 +198,11 @@ class CustomMealCard extends StatelessWidget {
             ),
 
             /// Lipides
-            const CustomProgressBar(
+            CustomProgressBar(
               name: 'Lipides',
-              value: 23,
-              valueTotal: 82,
-              colorValue: 'Nutrition',
+              value: lipidesValue,
+              valueTotal: lipidesValueTotal,
+              colorValue: colorValue,
             ),
 
             /// Gap
@@ -163,13 +210,40 @@ class CustomMealCard extends StatelessWidget {
               height: 32,
             ),
 
-            /// Boutton
+            /// Bouton
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12),
-              child: const CustomButton(
-                value: 'Nutrition',
-                label: 'Voir la recette',
-              ),
+              child: bigCard
+                  ? CustomButton(
+                      value: 'Nutrition',
+                      label: 'Valider le repas',
+                      onTap: () {
+                        macroCubit.addMacro(MacroState(
+                          calories: caloriesValue,
+                          glucides: glucidesValue,
+                          proteines: proteinesValue,
+                          lipides: lipidesValue,
+                        ));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Home(),
+                          ),
+                        );
+                      },
+                    )
+                  : CustomButton(
+                      value: 'Nutrition',
+                      label: 'Accèder au repas',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const NutritionViewRecettes(),
+                          ),
+                        );
+                      },
+                    ),
             )
           ],
         ),
