@@ -96,10 +96,6 @@ class _CustomSleepProgState extends State<CustomSleepProg> {
                   value: '23h30',
                   child: Text('23h30'),
                 ),
-                DropdownMenuItem<String>(
-                  value: '00h00',
-                  child: Text('00h00'),
-                ),
               ],
               onChanged: _onDropdownSleepChanged,
             )
