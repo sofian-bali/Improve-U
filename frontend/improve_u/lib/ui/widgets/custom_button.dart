@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String label;
   final String value;
+  final VoidCallback? onTap;
 
-  const CustomButton({super.key, required this.value, required this.label});
+  const CustomButton(
+      {super.key, required this.value, required this.label, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +20,25 @@ class CustomButton extends StatelessWidget {
       backgroundColor = Theme.of(context).colorScheme.tertiary;
     }
 
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 8,
-      ),
-      decoration: ShapeDecoration(
-        color: backgroundColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 8,
         ),
-      ),
-      child: Text(
-        label,
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: Theme.of(context).colorScheme.background,
-            ),
+        decoration: ShapeDecoration(
+          color: backgroundColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+        ),
+        child: Text(
+          label,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: Theme.of(context).colorScheme.background,
+              ),
+        ),
       ),
     );
   }

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:improve_u/theme/main_theme.dart';
+import 'package:improve_u/ui/screens/home.dart';
+import 'package:improve_u/ui/views/nutrition/nutrition_view_recettes.dart';
 import 'package:improve_u/ui/widgets/custom_button.dart';
 import 'package:improve_u/ui/widgets/custom_label.dart';
 import 'package:improve_u/ui/widgets/custom_progress_bar.dart';
+import 'package:improve_u/cubit/macro_cubit.dart';
+import 'package:improve_u/cubit/macro_state.dart';
 
 class CustomMealCard extends StatelessWidget {
   final bool bigCard;
@@ -39,6 +44,8 @@ class CustomMealCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MacroCubit macroCubit = BlocProvider.of<MacroCubit>(context);
+
     return Container(
       width: 400,
       margin: const EdgeInsets.symmetric(vertical: 12.0),
@@ -203,13 +210,40 @@ class CustomMealCard extends StatelessWidget {
               height: 32,
             ),
 
-            /// Boutton
+            /// Bouton
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12),
-              child: const CustomButton(
-                value: 'Nutrition',
-                label: 'Voir la recette',
-              ),
+              child: bigCard
+                  ? CustomButton(
+                      value: 'Nutrition',
+                      label: 'Valider le repas',
+                      onTap: () {
+                        macroCubit.addMacro(MacroState(
+                          calories: caloriesValue,
+                          glucides: glucidesValue,
+                          proteines: proteinesValue,
+                          lipides: lipidesValue,
+                        ));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Home(),
+                          ),
+                        );
+                      },
+                    )
+                  : CustomButton(
+                      value: 'Nutrition',
+                      label: 'Accèder au repas',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const NutritionViewRecettes(),
+                          ),
+                        );
+                      },
+                    ),
             )
           ],
         ),

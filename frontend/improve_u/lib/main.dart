@@ -7,16 +7,23 @@ import 'package:improve_u/ui/screens/home.dart';
 import 'package:improve_u/ui/views/nutrition/nutrition_view.dart';
 import 'package:improve_u/ui/views/training/training_view.dart';
 import 'package:improve_u/cubit/user_cubit.dart';
+import 'package:improve_u/cubit/macro_cubit.dart';
 
 void main() {
   runApp(
-    BlocProvider<UserCubit>(
-      create: (context) => UserCubit(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider<UserCubit>(
+          create: (context) => UserCubit(),
+        ),
+        BlocProvider<MacroCubit>(
+          create: (context) => MacroCubit(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

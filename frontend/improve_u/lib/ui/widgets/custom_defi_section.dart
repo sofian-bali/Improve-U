@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:improve_u/ui/widgets/custom_button.dart';
 import 'package:improve_u/ui/widgets/custom_label.dart';
+import 'package:improve_u/ui/views/defi_view.dart';
 
 class CustomDefiSection extends StatelessWidget {
   const CustomDefiSection({super.key});
@@ -82,12 +83,20 @@ class CustomDefiSection extends StatelessWidget {
           ),
 
           /// Bouton
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               CustomButton(
                 value: 'Nutrition',
                 label: 'Faire le défi',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DefiView(),
+                    ),
+                  );
+                },
               ),
             ],
           )
