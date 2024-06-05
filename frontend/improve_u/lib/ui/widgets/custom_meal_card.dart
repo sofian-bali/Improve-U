@@ -235,14 +235,7 @@ class CustomMealCard extends StatelessWidget {
                   : CustomButton(
                       value: 'Nutrition',
                       label: 'Accèder au repas',
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const NutritionViewRecettes(),
-                          ),
-                        );
-                      },
+                      onTap: () {},
                     ),
             )
           ],
