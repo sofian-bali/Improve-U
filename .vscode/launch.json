@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+
         {
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
@@ -27,7 +28,7 @@
             "name": "Flutter (iPhone 15 Pro Max)",
             "program": "lib/main.dart",
             "cwd": "frontend/improve_u",
-            "deviceId": "142BA2EB-31B2-49EF-A720-F6399F664169",
+            "deviceId": "4657A1F4-F6E7-4C47-B349-DA18629A8DEA",
             "request": "launch",
             "type": "dart"
         }
