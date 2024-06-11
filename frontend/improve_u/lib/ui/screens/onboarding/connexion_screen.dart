@@ -9,7 +9,6 @@ class ConnexionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        // Center the whole column horizontally
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -65,7 +64,7 @@ class ConnexionScreen extends StatelessWidget {
 
             /// Boutons en bas
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -73,7 +72,9 @@ class ConnexionScreen extends StatelessWidget {
                   CustomButtonBig(
                     isOutline: false,
                     label: "Créer un compte",
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, '/inscription');
+                    },
                   ),
 
                   /// Gap
@@ -96,7 +97,7 @@ class ConnexionScreen extends StatelessWidget {
                   /// Bouton secondaire
                   CustomButtonBig(
                     isOutline: true,
-                    label: "Créer un compte",
+                    label: "Se connecter",
                     onTap: () {},
                   ),
 
