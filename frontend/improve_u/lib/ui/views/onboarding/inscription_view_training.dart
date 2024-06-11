@@ -21,18 +21,18 @@ class _InscriptionViewTrainingState extends State<InscriptionViewTraining> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           /// Titre
-          Text(
-            'TRAINING',
-            style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: Text(
+              'TRAINING',
+              style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+            ),
           ),
-          const SizedBox(height: 12),
 
           /// Gap
-          const SizedBox(
-            height: 100,
-          ),
+          const SizedBox(height: 120),
 
           /// Options
           Center(

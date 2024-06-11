@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:improve_u/ui/screens/onboarding/inscription_view_nutrition.dart';
-import 'package:improve_u/ui/screens/onboarding/inscription_view_training.dart';
+import 'package:improve_u/ui/views/onboarding/inscription_view_nutrition.dart';
+import 'package:improve_u/ui/views/onboarding/inscription_view_redirect.dart';
+import 'package:improve_u/ui/views/onboarding/inscription_view_sante.dart';
+import 'package:improve_u/ui/views/onboarding/inscription_view_training.dart';
 import 'package:improve_u/ui/views/onboarding/inscription_view_info.dart';
 import 'package:improve_u/ui/widgets/custom_button_big.dart';
 
@@ -18,10 +20,10 @@ class _InscriptionScreenState extends State<InscriptionScreen> {
 
   void _nextStep() {
     setState(() {
-      if (_currentStep < 2) {
+      if (_currentStep < 4) {
         _currentStep++;
       } else {
-        // Code pour terminer l'inscription
+        Navigator.pushNamed(context, '/home');
       }
     });
   }
@@ -46,6 +48,10 @@ class _InscriptionScreenState extends State<InscriptionScreen> {
         return const InscriptionViewTraining();
       case 2:
         return const InscriptionViewNutrition();
+      case 3:
+        return const InscriptionViewSante();
+      case 4:
+        return const InscriptionViewRedirect();
       default:
         return const Center(
           child: Text('Erreur lors de l\'inscription'),
@@ -84,8 +90,9 @@ class _InscriptionScreenState extends State<InscriptionScreen> {
             Padding(
               padding: const EdgeInsets.only(bottom: 60.0),
               child: CustomButtonBig(
-                isOutline: _currentStep == 2,
-                label: _currentStep == 2 ? "Terminer" : "Continuer",
+                isOutline: false,
+                label:
+                    _currentStep == 4 ? "Commencer ma journée !" : "Continuer",
                 onTap: _nextStep,
               ),
             ),

@@ -21,18 +21,18 @@ class _InscriptionViewNutritionState extends State<InscriptionViewNutrition> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           /// Titre
-          Text(
-            'NUTRITION',
-            style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.secondary,
-                ),
+          Padding(
+            padding: const EdgeInsets.only(top: 24.0),
+            child: Text(
+              'NUTRITION',
+              style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+            ),
           ),
-          const SizedBox(height: 12),
 
           /// Gap
-          const SizedBox(
-            height: 100,
-          ),
+          const SizedBox(height: 120),
 
           /// Options
           Center(
