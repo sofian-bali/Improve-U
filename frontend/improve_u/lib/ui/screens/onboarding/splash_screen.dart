@@ -15,15 +15,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/logo/Animation_ImproveU.mp4')
-      ..initialize().then((_) {
-        setState(() {});
-        _controller.play();
-      });
+    _controller =
+        VideoPlayerController.asset('assets/logo/Animation_ImproveU.mp4')
+          ..initialize().then((_) {
+            setState(() {});
+            _controller.play();
+          });
 
     _controller.setLooping(false);
     _controller.addListener(() {
-      if (!_controller.value.isPlaying && _controller.value.position == _controller.value.duration) {
+      if (!_controller.value.isPlaying &&
+          _controller.value.position == _controller.value.duration) {
         _navigateToConnexionScreen();
       }
     });
@@ -52,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.onBackground,
+      backgroundColor: Colors.black,
       body: Center(
         child: _controller.value.isInitialized
             ? AspectRatio(
@@ -69,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 void main() {
-  runApp(MaterialApp(
-    home: const SplashScreen(),
+  runApp(const MaterialApp(
+    home: SplashScreen(),
   ));
 }
