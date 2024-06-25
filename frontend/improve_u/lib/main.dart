@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         '/nutrition': (BuildContext context) => const NutritionView(),
         '/health': (BuildContext context) => const SanteView(),
         '/defi': (BuildContext context) => const DefiView(),
-        '/splash': (context) => const SplashScreen(),
+        '/splash': (context) =>  SplashScreen(),
         '/connexion': (context) => const ConnexionScreen(),
         '/inscription': (context) => const InscriptionScreen(),
       },
