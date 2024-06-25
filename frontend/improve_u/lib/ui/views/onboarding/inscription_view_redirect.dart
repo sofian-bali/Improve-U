@@ -35,7 +35,7 @@ class _InscriptionViewRedirectState extends State<InscriptionViewRedirect> {
 
           /// Mascotte
           Image.asset(
-            'assets/mascotte.png',
+            'assets/logo/logo.png',
             height: 300,
           ),
         ],

@@ -38,6 +38,7 @@ dependencies:
   percent_indicator: ^4.2.3
   flutter_svg: ^2.0.10+1
   flutter_bloc: ^8.1.5
+  video_player: ^2.8.7
 
 dev_dependencies:
   flutter_test:
