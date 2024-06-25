@@ -34,10 +34,12 @@ class _InscriptionViewRedirectState extends State<InscriptionViewRedirect> {
           const SizedBox(height: 64),
 
           /// Mascotte
-          Image.asset(
-            'assets/logo/logo.png',
-            height: 300,
-          ),
+          Center(
+            child: Image.asset(
+              'assets/logo/logo_vertical_black.png',
+              height: 300,
+            ),
+          )
         ],
       ),
     );
