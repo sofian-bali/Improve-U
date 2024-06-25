@@ -38,6 +38,7 @@ dependencies:
   percent_indicator: ^4.2.3
   flutter_svg: ^2.0.10+1
   flutter_bloc: ^8.1.5
+  video_player: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -90,6 +91,7 @@ flutter:
   assets:
     - assets/
     - assets/logo/
+    - assets/logo/Animation_ImproveU.mp4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
